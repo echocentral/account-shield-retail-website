@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-user-new data-connection-country="UK">
+<head>
+  <title>Account Shield - Sign up</title>
+  {% include "_head.html" %}
+
+  <style>
+    body {font-weight: 300; font-size: 16px;}
+    h1 {font-weight: 200; color: #000;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #000;}
+    .trigger1 nav li:last-child {background-color: #ffa726;}
+    i.prefix {color: silver;}
+
+    .section {margin-top: 4rem; margin-bottom: 4rem;}
+
+    #section2 form {padding: 1rem 2rem;}
+    #section2 [type="checkbox"].filled-in + label:before, #section2 [type="checkbox"].filled-in + label:after {left: -5px;}
+    #section4 .browser-window {position: relative; border: 2px solid #eee; border-top: 2.5rem solid #eee; border-radius: 5px;}
+    #section4 .browser-window:before {position: absolute; top: -2rem; left: 0.5rem; content: ' \26ab \26ab \26ab'; color: #aaa;}
+    #section4 .browser-window img {width: 100%;}
+  </style>
+</head>
+<body class="trigger1 prompt-show">
+  {% include "_navbar.html" with {option: 5} %}
+
+  <div id="section1" class="section container center">
+    <div class="row">
+      <div class="col s12">
+        <h1>Sign up</h1>
+        <h2>OK, let's get you up and running<br>
+        It's as simple as 1 - 2 - 3.</h2>
+      </div>
+    </div>
+  </div>
+
+  <div id="section2" class="section container center">
+    <div class="row">
+      <div class="col s12">
+        <h4>1 - Create an account</h4>
+      </div>
+    </div>
+    <div class="row">
+      <form class="container z-depth-2 active-light-blue left-align">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">https</i>
+            <input id="password1" type="password" class="validate">
+            <label for="password1">Choose password</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="password2" type="password" class="validate">
+            <label for="password2">Repeat password</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input id="email" type="email" class="validate">
+            <label for="email">Email address</label>
+          </div>
+          <div class="input-field col s12">
+            <input type="checkbox" class="filled-in" id="filled-in-box" />
+            <label for="filled-in-box">I have read and agree to be bound by the <a href="#">terms and conditions</a></label>
+          </div>
+        </div>
+        <div class="row right-align">
+          <button class="btn waves-effect waves-light orange" type="submit" name="action">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="section3" class="section container">
+    <div class="row">
+      <div class="col s12 center-align">
+        <h4>2 - Validate your email address</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m8">
+        <p>Create your account above, and you should receive an email containing a verification link.  Click on the link to complete the sign up process.</p>
+        <p>If you have not received an email within 1 hour, please check your spam or junk folder - if you still cannot find it, then please email us at <a href="mailto:signup.help@echo-central.com">signup.help@echo-central.com</a>.</p>
+      </div>
+      <div class="col s0 m4 right-align">
+        <i class="material-icons massive light-blue-text text-lighten-2">email</i>
+      </div>
+    </div>
+  </div>
+
+  <div id="section4" class="section container">
+    <div class="row">
+      <div class="col s12 center-align">
+        <h4>3 - Login to the Dashboard</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col m4">
+        <div class="browser-window">
+          <img src="dash.png" alt="">
+        </div>
+      </div>
+      <div class="col m8">
+        <p>Once your email has been verified, you can login to your Dashboard.</p>
+        <p>Follow the instructions there to register your website domain(s) to work with <em>Account Shield</em>.</p>
+        <p>Then head over to the <a href="documentation.html">Documentation</a> page for examples of how to use <em>Account Shield</em>'s powerful features.</p>
+        <div class="center-align">
+          <button class="btn orange">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "_footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $('.button-collapse').sideNav();
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-as-device-platform="windows" data-as-device-platform-mac>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Example 1</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.min.css" rel="stylesheet">
+    <style>
+      h3 {font-size: 24px;}
+      .row {margin-bottom: 0;}
+      .option {margin-top: 1em; margin-bottom: 1em; padding: 0.2em 1em;}
+      .option.active {background-color: #eee;}
+      h4 {font-size: 16px;}
+      h4 i {vertical-align: middle;}
+      .btn.small {font-size: 80%;}
+    </style>
+  </head>
+  <body class="teal-text">
+
+    <div id="download-panel" class="section container">
+      <div class="row">
+        <div class="s12">
+          <h3>Download</h3>
+          <div class="divider teal lighten-2"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m3 l3">
+          <div id="windows" class="option @if(device-platform-windows,active)">
+            <h4><i class="material-icons">desktop_windows</i> Windows</h4>
+            <p>Version 1.6, 43.4MB</p>
+            <button class="btn small teal white-text">Download</button>
+          </div>
+        </div>
+        <div class="col s12 s12 m3 l3">
+          <div id="mac" class="option @if(device-platform-mac,active)">
+            <h4><i class="material-icons">desktop_mac</i> Mac</h4>
+            <p>Version 1.6, 38MB</p>
+            <button class="btn small teal white-text">Download</button>
+          </div>
+        </div>
+        <div class="col s12 s12 m3 l3">
+          <div id="android" class="option @if(device-platform-android,active)">
+            <h4><i class="material-icons">phone_android</i> Android</h4>
+            <p>Get it from Google Play</p>
+          </div>
+        </div>
+        <div class="col s12 s12 m3 l3">
+          <div id="ios" class="option @if(device-platform-iphone,active)">
+            <h4><i class="material-icons">phone_iphone</i> IOS</h4>
+            <p>Get it from the Apple iStore</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+      (function($){
+        $(function(){
+          $('[class*="@("], [class*="@if("]').each(function(){
+            var classArray = this.className.split(' ');
+            var index;
+
+            for (index = 0; index < classArray.length; index++) {
+
+              if (classArray[index].slice(0,3) == '@(') {
+                // process @ command
+              }
+
+              if (classArray[index].slice(0,4) == '@if(') {
+                // process @if command
+                var commandParts = classArray[index].split(',');
+
+                if ($('html[data-as-'+commandParts[0].slice(commandParts[0].indexOf('(')+1)+']').length == 1) {
+                  $(this).addClass(commandParts[1].slice(0,-1));
+                } else {
+                  $(this).removeClass(commandParts[1].slice(0,-1));
+                  //console.log(commandParts[1].slice(0,-1));
+                }
+              }
+            }
+
+          });
+        });
+      })(jQuery);
+    </script>
+  </body>
+</html>

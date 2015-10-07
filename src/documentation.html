@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Account Shield - Documentation</title>
+  {% include "_head.html" %}
+
+  <style>
+    body {font-weight: 300; font-size: 16px;}
+    h1 {font-weight: 200; color: #000;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #000;}
+    iframe {width: 100%; min-height: 22rem; border: 1px solid silver;}
+    body.icon-error i.material-icons {color: transparent;}
+    .table-of-contents {height: calc(100% - 64px); overflow: auto;}
+    .table-of-contents a.active {border-left: 4px solid #03a9f4;}
+    .trigger1 nav li:last-child {background-color: #ffa726;}
+    #sideMenu {position: fixed; top: 50%; transform: translateY(-50%); right: 20px; z-index: 99999;}
+    #sideMenu li a {width: 12px; height: 12px; border-radius: 50%; border: 2px solid #81d4fa; background: #FFF; display: block; margin: 10px 0; -webkit-transition: all 300ms ease; -moz-transition: all 300ms ease; -ms-transition: all 300ms ease; -o-transition: all 300ms ease; transition: all 300ms ease;}
+
+    #toc {min-height: 10rem;}
+    #toc ul {position: fixed; width: inherit; margin: 0;}
+    #toc li a {display: inline-block; width: 100%; margin-top: 2rem; padding: 0.1rem 1rem 0.1rem 5%; color: inherit;}
+    #toc li.secondary a {margin-top: 0; padding-left: 10%; font-size: 80%;}
+    #toc li a:not(.active):hover {background-color: #eee; color: #000; border: none;}
+    #main {border-left: 1px solid #ccc;}
+    @media only screen and (max-width: 600px) {
+      #toc ul {position: fixed; height: 8rem; overflow-y: auto; background-color: #fff; border-bottom: 1px solid #ccc;}
+      #toc li a {margin-top: 0;}
+      #toc li.secondary {display: none;}
+      #main {margin-top: 10rem; border-left: none;}
+    }
+
+    .section {margin-top: 4rem; margin-bottom: 4rem;}
+    .example .tabs {width: 50% !important; margin-right: 0; font-size: 80%; height: 34px;}
+    .example .tabs .tab a {line-height: 38px;}
+
+    #section1 pre {background-color: #eee; border: 1px solid silver;}
+
+    #section2 .divider {margin-bottom: 1rem;}
+    #section2 .command {color: #03a9f4; font-weight: bold; word-wrap: break-word;}
+    #section2 code {display: inline-block; width: 100%; margin: 0.3rem 0; padding: 0.1rem 0.5rem; background-color: #555; color: #fff;}
+
+    #section5 h5 {margin-top: 4rem; border-bottom: 1px solid silver;}
+    #section5 .name {zdisplay: inline-block; zwidth: 30%; zmargin-top: 1rem; font-weight: 500; color: #03a9f4;}
+
+    footer {position: relative; z-index: 999;}
+  </style>
+</head>
+<body class="trigger1">
+  {% include "_navbar.html" with {option: 4} %}
+
+  <div class="row">
+
+    <div id="toc" class="col s12 m2 no-padding center-on-small-only">
+      <ul class="table-of-contents">
+        <li><a href="#section1">Getting Started</a></li>
+        <li><a href="#section2">Client-side CSS</a></li>
+        <li class="secondary"><a href="#css-at">@</a></li>
+        <li class="secondary"><a href="#css-if">@if</a></li>
+        <li class="secondary"><a href="#css-show">@show-if</a></li>
+        <li class="secondary"><a href="#css-show">@visible-if</a></li>
+        <li class="secondary"><a href="#css-hide">@hide-if</a></li>
+        <li class="secondary"><a href="#css-hide">@invisible-if</a></li>
+        <li class="secondary"><a href="#cssBrowser">Browser support</a></li>
+        <li class="secondary"><a href="#cssExample1">Example 1</a></li>
+        <li class="secondary"><a href="#cssExample2">Example 2</a></li>
+        <li><a href="#section3">Client-side JS</a></li>
+        <li><a href="#section4">Server-side REST</a></li>
+        <li><a href="#section5">Properties Reference</a></li>
+        <li class="secondary"><a href="#prop-user">User</a></li>
+        <li class="secondary"><a href="#prop-device">Device</a></li>
+        <li class="secondary"><a href="#prop-connection">Connection</a></li>
+        <li class="secondary"><a href="#prop-location">Location</a></li>
+      </ul>
+    </div>
+
+    <div id="main" class="col s12 m10">
+
+      <div id="section1" class="section scrollspy">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <h2>Getting Started</h2>
+              <h4></h4>
+
+              <div class="row">
+                <div class="col s12">
+                  <h5>Download</h5>
+                  <p>To start using <em>Account Shield</em> all you have to do is download one of the options below. This is the standard version that comes with both the minified and unminified CSS and JavaScript files.</p>
+                  <a class="btn waves-effect waves-light orange" href="#">Download<i class="material-icons right">file_download</i></a>
+                </div>
+                <div class="col s12">
+                  <br>
+                  <h5>CDN</h5>
+                  <p>You can link to our hosted version of these files using the AWS CDN.</p>
+                  <pre><code class="language-markup">
+  &lt;!-- Compiled and minified CSS -->
+  &lt;link rel="stylesheet" href="https://.../as-client.min.css">
+
+  &lt;!-- Compiled and minified JavaScript -->
+  &lt;script src="https://.../as-client.min.js">&lt;/script>
+                  </code></pre>
+                </div>
+                <div class="col s12">
+                  <br>
+                  <h5>NPM</h5>
+                  <p>You can also get the latest release using NPM. This release contains both source and minified CSS and JavaScript files.</p>
+                  <pre><code class="language-bash">
+  npm install as-client
+                  </code></pre>
+                </div>
+                <div class="col s12">
+                  <br>
+                  <h5>Bower</h5>
+                  <p>You can also get the latest release using Bower. This release contains both source and minified CSS and JavaScript files.</p>
+                  <pre><code class="language-bash">
+  bower install as-client
+                  </code></pre>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+          <div class="row">
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    
+      <div id="section2" class="section scrollspy">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <h2>Client-side CSS</h2>
+              <h4>Simple client-side sensing using CSS</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col m6">
+              <p>Go beyond normal responsive design, to present content or preselect options depending upon device factors such as platform (e.g. Windows, Linux, etc...), browser or device type (e.g. Laptop, Desktop, etc...).</p>
+              <p><em>Account Shield</em> provides a simple class expression format which allows for showing/hiding content based upon </p>
+            </div>
+            <div class="col m6 orange lighten-5">
+              <h5>Setup</h5>
+              <p>Using Client-side CSS is simple as 1, 2, 3.</p>
+              <ol>
+                <li>Switch on the option in the Dashboard</li>
+                <li>Inlcude the CSS and JS files in your document</li>
+                <li>Use the special @ commands in your markup as shown below</li>
+              </ol>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <h5>How it works</h5>
+              <p>Use <em>Account Shield</em>'s special @ commands in your class strings.</p>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-at" class="command col s4 scrollspy">@(<span class="light">PROPERTY</span>)</div>
+            <div class="col s8">
+              Inserts content of PROPERTY into element
+              <code>&lt;span class="<b>@(device-platform)</b>"&gt;&lt;span&gt;</code> would produce markup like <kbd>&lt;span&gt;Windows&lt;span&gt;</kbd>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-if" class="command col s4 scrollspy">@if(<span class="light">PROPERTY</span>,<span class="light">CLASS</span>)</div>
+            <div class="col s8">
+              Enables CLASS if PROPERTY is true
+              <code>&lt;span class="<b>@if(device-platform-linux,penguin)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code> would produce markup like <kbd>&lt;span class="penguin"&gt;Lorum ipsum . . .&lt;span&gt;</kbd>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-show" class="command col s4 scrollspy">@show-if(<span class="light">PROPERTY</span>) /<br>@visible-if(<span class="light">PROPERTY</span>)</div>
+            <div class="col s8">
+              Shows content of element if PROPERTY is true
+              <code>&lt;span class="<b>@show-if(device-platform-windows)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code>
+              (@show accomplishes this using display:none/block, @visible using visibility:hidden/visible - the difference being that @visible reserves the space on the page for the content whether showing or not, @show will collapse the space on the page when not showing)
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-hide" class="command col s4 scrollspy">@hide-if(<span class="light">PROPERTY</span>) /<br>@invisible-if(<span class="light">PROPERTY</span>)</div>
+            <div class="col s8">
+              Hides content of element if PROPERTY is true
+              <code>&lt;span class="<b>@hide-if(device-platform-windows)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code>
+              (the difference between @hide and @invisible follows that for @show/@visible above)
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col s8 offset-s4">
+              <p>
+                <i class="material-icons small orange-text">warning</i> Take care not to use any spaces within your @ commands.
+              </p>
+              <p>
+                You can, however, combine @ commands with other class names, for example: <kbd>&lt;span class="foo @hide-if(device-platform-windows) bar"&gt;</kbd>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="cssBrowser" class="section scrollspy">
+        <div class="container row">
+          <div class="col s12">
+            <h5>Browser Support</h5>
+            <p><em>Account shield</em>'s Client-side CSS technology relies on CSS3 and JS support, and should work in all except the most ancient and obsolete browsers (i.e. IE6 and Safari 3.1).</p>
+            <p><em>Account shield</em> has been designed to gather data without raising notifications or warnings in the end-user's browser. You can use the technology without worrying that your user's will be put off by permission requests to know their location, for example.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="cssExample1" class="example section scrollspy">
+        <div class="container row">
+          <div class="col s12">
+            <h5>Example 1 - Highlight a download option based on device platform</h5>
+            <ul class="tabs grey lighten-4 orange-text active-text-orange">
+              <li class="tab col s3"><a class="active" href="#ex1-1">Output</a></li>
+              <li class="tab col s3"><a href="#ex1-2">Code</a></li>
+            </ul>
+          </div>
+          <div id="ex1-1" class="col s12">
+            <iframe class="z-depth-2" src="example1.html"></iframe>
+          </div>
+          <div id="ex1-2" class="col s12">
+            <iframe class="z-depth-2" src="example1-code.html"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div id="cssExample2" class="section scrollspy">
+        <div class="container row">
+          <div class="col s12">
+            <h5>Example 2 - Pre-fill location in a search bar</h5>
+            <iframe class="z-depth-2" src="example2.html"></iframe>
+            <p class="right-align">
+              <button class="btn orange">Download <i class="material-icons right">get_app</i></button>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div id="section3" class="section scrollspy">
+        <div class="container row">
+          <div class="col s12">
+            <h2>Client-side JS</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div id="section4" class="section scrollspy">
+        <div class="container row">
+          <div class="col s12">
+            <h2>Server-side REST</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div id="section5" class="section scrollspy">
+        <div class="container row">
+          <div class="col s12">
+            <h2>Properties Reference</h2>
+
+            <h5 id="prop-user" class="scrollspy"><i class="material-icons small">perm_identity</i> User</h5>
+            <div class="row">
+              <div class="name col s12 m4">user-new-to-site</div>
+              <div class="value col s12 m8">Boolean flag, to indicate whether that user has visited the site before.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">user-new-to-page</div>
+              <div class="value col s12 m8">Boolean flag, to indicate whether that user has visited the page before.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">user-last-on-site</div>
+              <div class="value col s12 m8">Date when this user last accessed this site.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">user-last-on-page</div>
+              <div class="value col s12 m8">Date when this user last accessed this page.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">user-devices</div>
+              <div class="value col s12 m8">Array of devices associated with the user.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">user-connections</div>
+              <div class="value col s12 m8">Array of connections associated with the user.</div>
+            </div>
+
+            <h5 id="prop-device" class="scrollspy"><i class="material-icons small">devices</i> Device</h5>
+            <div class="row">
+              <div class="name col s12 m4">device-new-to-site</div>
+              <div class="value col s12 m8">Boolean flag, to indicate whether that device has visited the site before.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">device-new-to-page</div>
+              <div class="value col s12 m8">Boolean flag, to indicate whether that device has visited the page before.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">device-last-on-site</div>
+              <div class="value col s12 m8">Date when this device last accessed this site.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">device-last-on-page</div>
+              <div class="value col s12 m8">Date when this device last accessed this page.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">device-type</div>
+              <div class="value col s12 m8">Text string, one of 'Mobile', 'Phablet', 'Tablet', 'Laptop' or 'Desktop'.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">device-platform</div>
+              <div class="value col s12 m8">Text string, one of 'Windows', 'Linux', 'Android', or 'IOS'.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">device-browser</div>
+              <div class="value col s12 m8">Text string, one of 'IE', 'Firefox', 'Chrome', 'Safari', etc.</div>
+            </div>
+
+            <h5 id="prop-connection" class="scrollspy"><i class="material-icons small">wifi_tethering</i> Connection</h5>
+            <div class="row">
+              <div class="name col s12 m4">IP Address</div>
+              <div class="value col s12 m8">Text string, providing the public IP address used by the connection.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">Connection seen on site</div>
+              <div class="value col s12 m8">Boolean flag, to indicate whether that connection has been used to visit the site before.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">Connection seen on page</div>
+              <div class="value col s12 m8">Boolean flag, to indicate whether that connection has been used to visit the page before.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">Connection last seen</div>
+              <div class="value col s12 m8">Date when this connection was last used to access this site.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">Connection Type</div>
+              <div class="value col s12 m8">One of 'Fixed', or 'Mobile'.</div>
+            </div>
+
+            <h5 id="prop-location" class="scrollspy"><i class="material-icons small">place</i> Location</h5>
+            <div class="row">
+              <div class="name col s12 m4">Location co-ordinates</div>
+              <div class="value col s12 m8">Comma separated list of a latitude and longitude position of the city nearest to the location of the device.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">Country code</div>
+              <div class="value col s12 m8">A two character ISO code indicating the country where the device is located.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">Region</div>
+              <div class="value col s12 m8">A text string indicating the region of the country where the device is located.</div>
+            </div>
+            <div class="row">
+              <div class="name col s12 m4">City</div>
+              <div class="value col s12 m8">A text string indicating the city nearest to the location of the device.</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {% include "_footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $('.button-collapse').sideNav();
+        $('.scrollspy').scrollSpy();
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>

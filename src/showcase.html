@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-user-new data-connection-country="UK">
+<head>
+  <title>Account Shield - Showcase</title>
+  {% include "_head.html" %}
+
+  <style>
+    body {font-weight: 300; font-size: 16px;}
+    h1 {font-weight: 200; color: #000;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #000;}
+    .trigger1 nav li:last-child {background-color: #ffa726;}
+  </style>
+</head>
+<body class="trigger1 prompt-show">
+  {% include "_navbar.html" with {option: 2} %}
+
+  <div id="section1" class="section container center">
+    <div class="row">
+      <h1>Showcase</h1>
+      <h2>See and download working examples</h2>
+    </div>
+  </div>
+
+  {% include "_footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $('.button-collapse').sideNav();
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+  </body>
+</html>
