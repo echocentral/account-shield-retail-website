@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   var merge = require("merge");
   require('dotenv').load({silent: true});
 
-  var includes = ["**/*"];
+  var includes = ["**/*", "!**/_*.html"];
 
   var config = {
     pkg: grunt.file.readJSON("package.json"),
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
           autoescape: true
         },
         dest: "build/stage/",
-        src: ['*.html'],
+        src: ['*.html', '!_*.html'],
         cwd: 'build/stage/',
         generateSitemap: false,
         generateRobotstxt: false,
