@@ -42,15 +42,19 @@
     #section2 code {display: inline-block; width: 100%; margin: 0.3rem 0; padding: 0.1rem 0.5rem; background-color: #555; color: #fff;}
 
     #section5 h5 {margin-top: 4rem; border-bottom: 1px solid silver;}
+    #section5 table {border-bottom: 1px solid #eee;}
+    #section5 table th:nth-child(1) {width: 60%;}
+    #section5 table td {vertical-align: top;}
     #section5 .name {zdisplay: inline-block; zwidth: 30%; zmargin-top: 1rem; font-weight: 500; color: #03a9f4;}
+    #section5 td:empty:before {content: "-- N/A --"; display: block; padding-left: 2em; opacity: 0.25;}
 
-    footer {position: relative; z-index: 999;}
+    footer {position: relative; z-index: 999; margin-top: 0 !important;}
   </style>
 </head>
 <body class="trigger1">
   {% include "_navbar.html" with {option: 4} %}
 
-  <div class="row">
+  <div class="row no-margin">
 
     <div id="toc" class="col s12 m2 no-padding center-on-small-only">
       <ul class="table-of-contents">
@@ -155,7 +159,7 @@
           <div class="row">
             <div class="col s12">
               <h5>How it works</h5>
-              <p>Use <em>Account Shield</em>'s special @ commands in your class strings.</p>
+              <p>Use <em>Account Shield</em>'s special @ commands in your class strings. See the <a href="#section5">Properties Reference</a> for a full list of properties which can be used with these commands</p>
             </div>
           </div>
           <div class="divider"></div>
@@ -249,10 +253,34 @@
       <div class="divider"></div>
 
       <div id="section3" class="section scrollspy">
-        <div class="container row">
-          <div class="col s12">
-            <h2>Client-side JS</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              <h2>Client-side JS</h2>
+            </div>
           </div>
+          <div class="row">
+            <div class="col m6">
+              <p>Go beyond normal responsive design, to present content or preselect options depending upon device factors such as platform (e.g. Windows, Linux, etc...), browser or device type (e.g. Laptop, Desktop, etc...).</p>
+              <p><em>Account Shield</em> provides a simple class expression format which allows for showing/hiding content based upon </p>
+            </div>
+            <div class="col m6 orange lighten-5">
+              <h5>Setup</h5>
+              <p>Using Client-side CSS is simple as 1, 2, 3.</p>
+              <ol>
+                <li>Switch on the option in the Dashboard</li>
+                <li>Inlcude the CSS and JS files in your document</li>
+                <li>Use the special @ commands in your markup as shown below</li>
+              </ol>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <h5>How it works</h5>
+              <p>Use <em>Account Shield</em>'s special @ commands in your class strings. See the <a href="#section5">Properties Reference</a> for a full list of properties which can be used with these commands</p>
+            </div>
+          </div>
+          <div class="divider"></div>
         </div>
       </div>
 
@@ -274,101 +302,272 @@
             <h2>Properties Reference</h2>
 
             <h5 id="prop-user" class="scrollspy"><i class="material-icons small">perm_identity</i> User</h5>
-            <div class="row">
-              <div class="name col s12 m4">user-new-to-site</div>
-              <div class="value col s12 m8">Boolean flag, to indicate whether that user has visited the site before.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">user-new-to-page</div>
-              <div class="value col s12 m8">Boolean flag, to indicate whether that user has visited the page before.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">user-last-on-site</div>
-              <div class="value col s12 m8">Date when this user last accessed this site.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">user-last-on-page</div>
-              <div class="value col s12 m8">Date when this user last accessed this page.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">user-devices</div>
-              <div class="value col s12 m8">Array of devices associated with the user.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">user-connections</div>
-              <div class="value col s12 m8">Array of connections associated with the user.</div>
-            </div>
+            <table class="striped">
+              <thead>
+                <th>Property</th>
+                <th>CSS usage</th>
+                <th>JS usage</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="name">user new to site</span> (Boolean)<br>Flag indicating whether that user has visited the site before</td>
+                  <td>user-new-to-site</td>
+                  <td>AS.user.newToSite</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user new to page</span> (Boolean)<br>Flag indicating whether that user has visited the page before</td>
+                  <td>user-new-to-page</td>
+                  <td>AS.user.newToPage</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user last on site</span> (Datetime)<br>Date when this user last accessed this site</td>
+                  <td>user-last-on-site</td>
+                  <td>AS.user.lastOnSite</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user last on page</span> (Datetime)<br>Date when this user last accessed this page</td>
+                  <td>user-last-on-page</td>
+                  <td>AS.user.lastOnPage</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user devices</span> (Method)<br>Returns an array of devices associated with the user</td>
+                  <td></td>
+                  <td>AS.user.devices()</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user connections</span> (Method)<br>Returns an array of connections associated with the user</td>
+                  <td></td>
+                  <td>AS.user.connections()</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user place of residence</span> (String)<br>City and country code indicating likely place of residence</td>
+                  <td>user-place-of-residence</td>
+                  <td>AS.user.placeOfResidence</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user place of work</span> (String)<br>City and country code indicating likely place of work</td>
+                  <td>user-place-of-work</td>
+                  <td>AS.user.placeOfWork</td>
+                </tr>
+                <tr>
+                  <td><span class="name">user languages</span> (String)<br>List of language codes indicating likely languages spoken</td>
+                  <td>user-languages</td>
+                  <td>AS.user.languages</td>
+                </tr>
+              </tbody>
+            </table>
 
             <h5 id="prop-device" class="scrollspy"><i class="material-icons small">devices</i> Device</h5>
-            <div class="row">
-              <div class="name col s12 m4">device-new-to-site</div>
-              <div class="value col s12 m8">Boolean flag, to indicate whether that device has visited the site before.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">device-new-to-page</div>
-              <div class="value col s12 m8">Boolean flag, to indicate whether that device has visited the page before.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">device-last-on-site</div>
-              <div class="value col s12 m8">Date when this device last accessed this site.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">device-last-on-page</div>
-              <div class="value col s12 m8">Date when this device last accessed this page.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">device-type</div>
-              <div class="value col s12 m8">Text string, one of 'Mobile', 'Phablet', 'Tablet', 'Laptop' or 'Desktop'.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">device-platform</div>
-              <div class="value col s12 m8">Text string, one of 'Windows', 'Linux', 'Android', or 'IOS'.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">device-browser</div>
-              <div class="value col s12 m8">Text string, one of 'IE', 'Firefox', 'Chrome', 'Safari', etc.</div>
-            </div>
+            <table class="striped">
+              <thead>
+                <th>Property</th>
+                <th>CSS usage</th>
+                <th>JS usage</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="name">device new to site</span> (Boolean)<br>Flag indicating whether that device has visited the site before</td>
+                  <td>device-new-to-site</td>
+                  <td>AS.device.newToSite</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device new to page</span> (Boolean)<br>Flag indicating whether that device has visited the page before</td>
+                  <td>device-new-to-page</td>
+                  <td>AS.device.newToPage</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device last on site</span> (Datetime)<br>Date when this device last accessed this site</td>
+                  <td>device-last-on-site</td>
+                  <td>AS.device.lastOnSite</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device last on page</span> (Datetime)<br>Date when this device last accessed this page</td>
+                  <td>device-last-on-page</td>
+                  <td>AS.device.lastOnPage</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device type</span> (String)<br>One of 'Mobile', 'Phablet', 'Tablet', 'Laptop' or 'Desktop' indicating likely type of device</td>
+                  <td>device-type</td>
+                  <td>AS.device.type</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device type &lt;type&gt;<type></span> (Boolean)<br>A flag indicating if the device is of type &lt;type&gt;</td>
+                  <td>
+                    device-type-mobile<br>
+                    device-type-phablet<br>
+                    device-type-tablet<br>
+                    device-type-laptop<br>
+                    device-type-desktop
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span class="name">device platform</span> (String)<br>One of 'Windows', 'Mac', Linux', 'Android', or 'IOS' indicating likely operating system of device</td>
+                  <td>device-platform</td>
+                  <td>AS.device.platform</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device platform &lt;type&gt;<type></span> (Boolean)<br>A flag indicating if the operating system &lt;type&gt; is being used on the device</td>
+                  <td>
+                    device-platform-windows<br>
+                    device-platform-mac<br>
+                    device-platform-linux<br>
+                    device-platform-ios<br>
+                    device-platform-android
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span class="name">device browser</span> (String)<br>One of 'IE', 'Firefox', 'Chrome', 'Safari', etc. indicating likely browser type being used on the device</td>
+                  <td>device-browser</td>
+                  <td>AS.device.browser</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device browser &lt;type&gt;</span> (Boolean)<br>A flag indicating if the browser of type &lt;type&gt; is being used on the device</td>
+                  <td>
+                    device-browser-ie<br>
+                    device-browser-firefox<br>
+                    device-browser-chrome<br>
+                    device-browser-safari<br>
+                    device-browser-opera<br>
+                    device-browser-silk<br>
+                    device-browser-vivaldi<br>
+                    device-browser-maxthon<br>
+                    device-browser-ya<br>
+                    device-browser-sleipnir
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span class="name">device orientation</span> (String)<br>One of 'Portrait', 'Landscape', etc. indicating orientation of the device on page load</td>
+                  <td>device-orientation</td>
+                  <td>AS.device.orientation</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device orientation &lt;type&gt;</span> (Boolean)<br>A flag indicating if the device had an orientation of &lt;type&gt; on page load</td>
+                  <td>
+                    device-browser-portrait<br>
+                    device-browser-landscape
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span class="name">device screen width</span> (String)<br>An indication of the width of the screen in pixels</td>
+                  <td>device-screen-width</td>
+                  <td>AS.device.screenWidth</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device screen height</span> (String)<br>An indication of the likely height of the screen in pixels</td>
+                  <td>device-screen-height</td>
+                  <td>AS.device.screenHeight</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device screen diagonal</span> (String)<br>An indication of the likely diagonal screen size in inches</td>
+                  <td>device-screen-diagonal</td>
+                  <td>AS.device.screenDiagonal</td>
+                </tr>
+                <tr>
+                  <td><span class="name">device connections</span> (Method)<br>Returns an array of connections used by this device</td>
+                  <td></td>
+                  <td>AS.device.connections()</td>
+                </tr>
+              </tbody>
+            </table>
 
             <h5 id="prop-connection" class="scrollspy"><i class="material-icons small">wifi_tethering</i> Connection</h5>
-            <div class="row">
-              <div class="name col s12 m4">IP Address</div>
-              <div class="value col s12 m8">Text string, providing the public IP address used by the connection.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">Connection seen on site</div>
-              <div class="value col s12 m8">Boolean flag, to indicate whether that connection has been used to visit the site before.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">Connection seen on page</div>
-              <div class="value col s12 m8">Boolean flag, to indicate whether that connection has been used to visit the page before.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">Connection last seen</div>
-              <div class="value col s12 m8">Date when this connection was last used to access this site.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">Connection Type</div>
-              <div class="value col s12 m8">One of 'Fixed', or 'Mobile'.</div>
-            </div>
+            <table class="striped">
+              <thead>
+                <th>Property</th>
+                <th>CSS usage</th>
+                <th>JS usage</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="name">Connection new to site</span> (Boolean)<br>Flag indicating whether the current connection has been used to visit the site before.</td>
+                  <td>connection-new-to-site</td>
+                  <td>AS.connection.newToSite</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection new to page</span> (Boolean)<br>Flag indicating whether the current connection has been used to visit the page before.</td>
+                  <td>connection-new-to-page</td>
+                  <td>AS.connection.newToPage</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection last on site</span> (Datetime)<br>Date when the current connection was last used to access this site</td>
+                  <td>connection-last-on-site</td>
+                  <td>AS.connection.lastOnSite</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection last on page</span> (Datetime)<br>Date when the current connection was last used to access this page</td>
+                  <td>connection-last-on-page</td>
+                  <td>AS.connection.lastOnPage</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection type</span> (String)<br>One of 'Fixed' or 'Mobile', indicating the type of the current connection</td>
+                  <td>connection-type</td>
+                  <td>AS.connection.type</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection type &lt;type&gt;</span> (Boolean)<br>A flag indicating if the connection is of type &lt;type&gt;</td>
+                  <td>
+                    connection-type-fixed<br>
+                    connection-type-mobile
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection provider name</span> (String)<br>Text string indicating the provider (i.e. ISP) of the current connection</td>
+                  <td>connection-provider-name</td>
+                  <td>AS.connection.providerName</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection external IP address</span> (String)<br>Text string providing the public IP address used by the current connection</td>
+                  <td>connection-external-ip</td>
+                  <td>AS.connection.externalIp</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection internal IP addresses</span> (String)<br>Text string providing a comma separated list of the current devices internal IP addresses (empty if an IPv6 external IP is being used)</td>
+                  <td>connection-internal-ip</td>
+                  <td>AS.connection.internalIp</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Connection devices</span> (Method)<br>Returns an array of devices used with this connection</td>
+                  <td></td>
+                  <td>AS.connection.devices()</td>
+                </tr>
+              </tbody>
+            </table>
 
             <h5 id="prop-location" class="scrollspy"><i class="material-icons small">place</i> Location</h5>
-            <div class="row">
-              <div class="name col s12 m4">Location co-ordinates</div>
-              <div class="value col s12 m8">Comma separated list of a latitude and longitude position of the city nearest to the location of the device.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">Country code</div>
-              <div class="value col s12 m8">A two character ISO code indicating the country where the device is located.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">Region</div>
-              <div class="value col s12 m8">A text string indicating the region of the country where the device is located.</div>
-            </div>
-            <div class="row">
-              <div class="name col s12 m4">City</div>
-              <div class="value col s12 m8">A text string indicating the city nearest to the location of the device.</div>
-            </div>
-
+            <table class="striped">
+              <thead>
+                <th>Property</th>
+                <th>CSS usage</th>
+                <th>JS usage</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="name">Location co-ordinates</span> (String)<br>Comma separated list of a latitude and longitude position of the city nearest to the current location of the device</td>
+                  <td>location-coordinates</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><span class="name">Location country</span> (String)<br>A two character ISO code indicating the country where the device is currently located</td>
+                  <td>location-country</td>
+                  <td>AS.connection.location.country</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Location region</span> (String)<br>Text string indicating the region of the country where the device is currently located</td>
+                  <td>location-region</td>
+                  <td>AS.connection.location.region</td>
+                </tr>
+                <tr>
+                  <td><span class="name">Location city</span> (String)<br>Text string indicating the city nearest to the current location of the device</td>
+                  <td>location-city</td>
+                  <td>AS.connection.location.city</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
