@@ -1,5 +1,11 @@
+html.iframed {
+  transform: scale(0.5);
+}
 body {
   background-color: #fcfcfc;
+}
+a {
+  color: #9c27b0;
 }
 #main {
   min-height: calc(100vh - 120px);

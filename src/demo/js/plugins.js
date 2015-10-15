@@ -11,14 +11,12 @@ $(function() {
 
   var window_width = $(window).width();
 
-  /*Preloader*/
-  $(window).load(function() {
-    setTimeout(function() {
-      $('body').addClass('loaded');      
-    }, 200);
-  });  
-
+  // iframe check
+  if (window.location !== window.parent.location) $('html').css('zoom','75%');
   
+  /*Preloader*/
+  $('body').addClass('loaded');
+
   // Search class for focus
   $('.header-search-input').focus(
   function(){

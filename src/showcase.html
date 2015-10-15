@@ -13,10 +13,15 @@
 
     .trigger1 nav li:last-child {background-color: #ffa726;}
 
-    #demo-area div {position: relative; width: 100%; height: 60vh; border: 20px solid silver; border-radius: 2rem; transition: width,height 0.5s;}
-    #demo-area.medium div {width: 60%; height: 30vh; border-width: 20px 40px;}
-    #demo-area.small div {width: 40%; height: 60vh; border-width: 40px 20px;}
-    #demo-area div iframe {position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;}
+    #demo-area .frame {position: relative; max-width: 90vw; margin: 2rem auto; border: 20px solid silver; border-radius: 2rem; transition: width,height 0.5s;}
+    #demo-area.large .frame {width: 1050px; height: 591px; border-width: 20px;}
+    #demo-area.large .frame:after {content: ' '; position: absolute; bottom: -52px; left: 200px; width: 600px; height: 30px; background-color: silver;}
+    #demo-area.medium .frame {width: 600px; height: 337.5px; border-width: 20px 40px;}
+    #demo-area.small .frame {width: 300px; height: 550px; border-width: 40px 20px;}
+    #demo-area.small .frame:after {content: ' '; position: absolute; bottom: -27px; left: 80px; width: 100px; height: 15px; background-color: #fff; border-radius: 40px;}
+    #demo-area .frame .launch {display: none; position: absolute; top: -50px; right: -50px; z-index: 10; background-color: rgba(255,255,255,0.85); border-radius: 100%;}
+    #demo-area .frame:hover .launch {display: block;}
+    #demo-area .frame iframe {position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;}
   </style>
 </head>
 <body class="trigger1 prompt-show">
@@ -30,13 +35,14 @@
   </div>
 
   <div id="section2" class="section container">
-    <ul class="tabs row">
-      <li class="tab col s4 m2"><a class="active" href="#demo-big"><i class="material-icons">laptop</i></a></li>
-      <li class="tab col s4 m2"><a href="#demo-medium"><i class="material-icons">tablet</i></a></li>
-      <li class="tab col s4 m2"><a href="#demo-small"><i class="material-icons">phone_android</i></a></li>
+    <ul class="tabs orange-text active-text-light-blue">
+      <li class="tab col s4 m2"><a class="active" href="#" onclick="$('#demo-area').removeClass('large medium small').addClass('large')"><i class="material-icons">laptop</i></a></li>
+      <li class="tab col s4 m2"><a href="#" onclick="$('#demo-area').removeClass('large medium small').addClass('medium')"><i class="material-icons">tablet</i></a></li>
+      <li class="tab col s4 m2"><a href="#" onclick="$('#demo-area').removeClass('large medium small').addClass('small')"><i class="material-icons">phone_android</i></a></li>
     </ul>
-    <div id="demo-area" class="row">
+    <div id="demo-area" class="row large">
       <div class="frame">
+        <a class="launch tooltipped" href="/demo/user-login.html" target="demo" data-tooltip="Open in separate tab"><i class="material-icons medium light-blue-text">open_in_new</i></a>
         <iframe src="/demo/user-login.html"></iframe>
       </div>
     </div>
