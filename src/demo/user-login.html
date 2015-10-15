@@ -1,47 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!--================================================================================
-	Item Name: Materialize - Material Design Admin Template
-	Version: 2.3
-	Author: GeeksLabs
-	Author URL: http://www.themeforest.net/user/geekslabs
-================================================================================ -->
-
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="msapplication-tap-highlight" content="no">
-  <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
-  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-  <title>Login Page | Materialize - Material Design Admin Template</title>
-
-  <!-- Favicons-->
-  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
-  <!-- Favicons-->
-  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
-  <!-- For iPhone -->
-  <meta name="msapplication-TileColor" content="#00bcd4">
-  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-  <!-- For Windows Phone -->
-
-
-  <!-- CORE CSS-->
-  
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <!-- Custome CSS-->    
-    <link href="css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <title>SecureApp - Login</title>
+  {% include "../_head.html" %}
+  {% include "_head.html" %}
+  <link href="css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
 
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-  
+  <style type="text/css">
+    #login-page [type="checkbox"]:not(:checked)+label:before {border-color: inherit;}
+    #login-page [type="checkbox"]:checked+label:before {border-right-color: #ba68c8; border-bottom-color: #ba68c8;}
+  </style>
 </head>
 
-<body class="cyan">
+<body class="grey darken-2">
   <!-- Start Page Loading -->
   <div id="loader-wrapper">
       <div id="loader"></div>        
@@ -50,15 +25,13 @@
   </div>
   <!-- End Page Loading -->
 
-
-
   <div id="login-page" class="row">
     <div class="col s12 z-depth-4 card-panel">
       <form class="login-form">
         <div class="row">
           <div class="input-field col s12 center">
             <img src="images/login-logo.png" alt="" class="circle responsive-img valign profile-image-login">
-            <p class="center login-form-text">Material Design Admin Template</p>
+            <p class="center login-form-text">SecureApp Login</p>
           </div>
         </div>
         <div class="row margin">
@@ -76,22 +49,22 @@
           </div>
         </div>
         <div class="row">          
-          <div class="input-field col s12 m12 l12  login-text">
+          <div class="input-field col s12 login-text right-align">
               <input type="checkbox" id="remember-me" />
               <label for="remember-me">Remember me</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <a href="index.html" class="btn waves-effect waves-light col s12">Login</a>
+            <a href="index.html" class="btn purple lighten-2 waves-effect waves-light col s12">Login</a>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s6 m6 l6">
-            <p class="margin medium-small"><a href="page-register.html">Register Now!</a></p>
+            <p class="margin medium-small"><a class="purple-text" href="user-register.html">Register</a></p>
           </div>
           <div class="input-field col s6 m6 l6">
-              <p class="margin right-align medium-small"><a href="page-forgot-password.html">Forgot password ?</a></p>
+              <p class="margin right-align medium-small"><a class="purple-text" href="user-forgot-password.html">Forgot password?</a></p>
           </div>          
         </div>
 
@@ -99,24 +72,11 @@
     </div>
   </div>
 
-
-
-  <!-- ================================================
-    Scripts
-    ================================================ -->
-
-  <!-- jQuery Library -->
-  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-  <!--materialize js-->
-  <script type="text/javascript" src="js/materialize.js"></script>
-  <!--prism-->
-  <script type="text/javascript" src="js/prism.js"></script>
-  <!--scrollbar-->
-  <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  <!--  Scripts-->
+  {% include "../_tail.html" %}
 
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="js/plugins.js"></script>
-
 </body>
 
 </html>

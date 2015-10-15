@@ -10,7 +10,13 @@
     h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
     h2 i {vertical-align: middle !important;}
     em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #000;}
+
     .trigger1 nav li:last-child {background-color: #ffa726;}
+
+    #demo-area div {position: relative; width: 100%; height: 60vh; border: 20px solid silver; border-radius: 2rem; transition: width,height 0.5s;}
+    #demo-area.medium div {width: 60%; height: 30vh; border-width: 20px 40px;}
+    #demo-area.small div {width: 40%; height: 60vh; border-width: 40px 20px;}
+    #demo-area div iframe {position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: 100%; height: 100%;}
   </style>
 </head>
 <body class="trigger1 prompt-show">
@@ -19,7 +25,20 @@
   <div id="section1" class="section container center">
     <div class="row">
       <h1>Showcase</h1>
-      <h2>See and download working examples</h2>
+      <h2>See and download working examples of <em>Account Shield</em> in action</h2>
+    </div>
+  </div>
+
+  <div id="section2" class="section container">
+    <ul class="tabs row">
+      <li class="tab col s4 m2"><a class="active" href="#demo-big"><i class="material-icons">laptop</i></a></li>
+      <li class="tab col s4 m2"><a href="#demo-medium"><i class="material-icons">tablet</i></a></li>
+      <li class="tab col s4 m2"><a href="#demo-small"><i class="material-icons">phone_android</i></a></li>
+    </ul>
+    <div id="demo-area" class="row">
+      <div class="frame">
+        <iframe src="/demo/user-login.html"></iframe>
+      </div>
     </div>
   </div>
 
