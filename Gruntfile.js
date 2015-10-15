@@ -57,7 +57,7 @@ module.exports = function(grunt) {
           autoescape: true
         },
         dest: "build/stage/",
-        src: ['*.html', '!_*.html'],
+        src: ['**/*.html', '!_*.html'],
         cwd: 'build/stage/',
         generateSitemap: false,
         generateRobotstxt: false,
