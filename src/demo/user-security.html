@@ -99,7 +99,7 @@
                     <div class="row">
                         <div class="col s12 m12 l12">
                             <h5 class="breadcrumbs-title">See and manage your user security</h5>
-                            <p>&nbsp;</p>
+                            <p class="light">Track activity on your account, manage which devices have access, and control your security settings</p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                         <li class="tab col s4"><a href="#security-settings"><i class="material-icons">settings</i> Settings</a></li>
                     </ul>
                     <div id="security-activity" class="panel white z-depth-1">
-                        <h4><i class="material-icons small">list</i> Activity</h4>
+                        <h4><i class="material-icons small">list</i> User account activity</h4>
                         <p class="light">Track sessions used with this account in the last 30 days</p>
                         <ul class="session-cards collapsible z-depth-0" data-collapsible="accordion">
                             <li class="session-card current">
@@ -211,10 +211,11 @@
                                 </div>
                             </li>
                         </ul>
-                        <p class="right-align">Notice anything suspicious? <a href="#">Report it</a></p>
+                        <p class="right-align light">Notice anything suspicious? <a href="#">Report it</a></p>
                     </div>
                     <div id="security-devices" class="panel white z-depth-1">
-                        <p>Here you can review and manage the devices which have access to this site.</p>
+                        <h4><i class="material-icons small">devices</i> User verified devices</h4>
+                        <p class="light">Review and manage which devices have access to this account</p>
                         <ul class="device-cards collapsible z-depth-0" data-collapsible="accordion">
                             <li class="device-card current">
                                 <div class="collapsible-header active" title="Current device">
@@ -486,21 +487,90 @@
                         </ul>
                     </div>
                     <div id="security-settings" class="panel white z-depth-1">
-                        <form>
-                            <h3>Account verification options</h3>
-                            <div class="row">
-                                <p class="col s6">Only allow access by devices I approve</p>
-                                <div class="switch col s6"><label>Off<input type="checkbox" checked><span class="lever"></span>On</label></div>
-                            </div>
-                            <div class="row">
-                                <p class="col s6">Send a text to my mobile</p>
-                                <div class="switch col s6"><label>Off<input type="checkbox" checked><span class="lever"></span>On</label></div>
-                            </div>
-                            <div class="row">
-                                <p class="col s6">Send an email to my address</p>
-                                <div class="switch col s6"><label>Off<input type="checkbox"><span class="lever"></span>On</label></div>
-                            </div>
-                        </form>
+                        <h4><i class="material-icons small">settings</i> User security settings</h4>
+                        <p class="light">Protect you account - get alerted to login attempts</p>
+                        <ul class="settings-cards collapsible z-depth-0">
+                            <li id="settings-set" class="settings-card">
+                                <div class="collapsible-header">
+                                    <i class="material-icons settings-type-icon grey-text text-darken-2">contact_phone</i>
+                                    Set contact details
+                                </div>
+                                <div class="collapsible-body">
+                                    <div class="row">
+                                        <div class="col s6">
+                                            <p>We use these contact details to communicate with you about activity on your account.  The information you enter here should be personal to you - do not provide details of  means of communication which you share with other people.</p>
+                                        </div>
+                                        <div class="col s6">
+                                            <div id="edit-email" class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="email" type="email" class="validate" value="john.doe@gmail.com">
+                                                    <label for="email">Email</label>
+                                                </div>
+                                            </div>
+                                            <div id="edit-sms" class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="sms" type="tel" maxlength="20" class="validate" value="07323 232029">
+                                                    <label for="sms">Mobile no.</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="settings-choose" class="settings-card">
+                                <div class="collapsible-header active">
+                                    <i class="material-icons settings-type-icon grey-text text-darken-2">notifications</i>
+                                    Choose when to be alerted
+                                </div>
+                                <div class="collapsible-body">
+                                    <table class="bordered">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th class="center-align">
+                                                    <i class="material-icons">email</i>
+                                                    <br>Email<br>
+                                                    <span class="light">to <a class="toggle" href="#edit-email" onclick="$('#settings-set .collapsible-header').click()">john.doe@gmail.com</a></span>
+                                                </th>
+                                                <th class="center-align">
+                                                    <i class="material-icons">textsms</i>
+                                                    <br>Text message<br>
+                                                    <span class="light">to <a class="toggle" href="#edit-sms" onclick="$('#settings-set .collapsible-header').click()">07323 232029</a></span>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr></tr>
+                                            <tr>
+                                                <td>
+                                                    Critical security risks<br>
+                                                    <span class="light">E.g. if a hacked has your password and tries to sign in to your account</span>
+                                                </td>
+                                                <td class="center-align">
+                                                    <input id="critical-email" class="filled-in" type="checkbox" checked disabled>
+                                                    <label for="critical-email"></label>
+                                                </td>
+                                                <td class="center-align">
+                                                    <input id="critical-sms" class="filled-in" type="checkbox" checked>
+                                                    <label for="critical-sms"></label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Routine account activity<br>
+                                                    <span class="light">Receive a regular digest of your account activity</span>
+                                                </td>
+                                                <td class="center-align">
+                                                    <input id="regular-email" class="filled-in" type="checkbox">
+                                                    <label for="regular-email"></label>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>                                
+                        </ul>
                     </div>
                 </div>
             </div>
