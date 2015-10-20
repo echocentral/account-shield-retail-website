@@ -5,92 +5,118 @@
   {% include "_head.html" %}
 
   <style>
+    /* Basic tag overrides */
     body {font-weight: 300; font-size: 16px;}
     a {color: #ff9800;}
     h1 {font-weight: 200; color: #000;}
     h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
     h2 i {vertical-align: middle !important;}
-    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #000;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #03a9f4;}
+
+    /* Top menu */
     .trigger1 nav li:last-child {background-color: #ffa726;}
+
+    /* Side menu */
     #sideMenu {position: fixed; top: 50%; transform: translateY(-50%); right: 20px; z-index: 99999;}
     #sideMenu li a {width: 12px; height: 12px; border-radius: 50%; border: 2px solid #81d4fa; background: #FFF; display: block; margin: 10px 0; -webkit-transition: all 300ms ease; -moz-transition: all 300ms ease; -ms-transition: all 300ms ease; -o-transition: all 300ms ease; transition: all 300ms ease;}
+
+    /* Right scroll menu */
     .table-of-contents li {padding: inherit;}
     .table-of-contents a {display: initial; font-weight: inherit; color: inherit; padding-left: inherit; height: auto; line-height: normal; letter-spacing: normal;}
     .table-of-contents a:hover {color: inherit; padding-left: inherit; border-left: none;}
     .table-of-contents a.active {font-weight:inherit; padding-left: inherit; border-left: none; background-color: #ff9800 !important; border-color: #ff9800 !important;}
-    .parallax-container {height: 550px;}
-    #section1, #section2, #section3, footer {margin-top: 8rem;}
+
+    /* Helper classes */
+    .section {margin-top: 10%;}
     .btn-large i.large {font-size: 3rem; line-height: 1.33;}
 
-    #top-banner {position: relative; padding-top: 150px;}
-    #top-banner .effect {position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-repeat: no-repeat; transition: background-position opacity 0.1s;}
-    #top-banner .col:first-child {position: relative; padding-bottom: 30%; background-color: rgba(255,255,255,0.85);}
-    #top-banner .fader {position: absolute; top: 50%; bottom: 0; width: 100%; background: linear-gradient(to top, #fff, rgba(255,255,255,0));}
-    #section0 {overflow-x: hidden; zpadding-top: 10%; zbackground: linear-gradient(to bottom, #fff 15%, rgba(255,255,255,0));}
-    #section0 li {list-style: circle inside;}
-    #customization, #protection {position: relative; background-repeat: no-repeat; background-size: contain;}
-    #customization .col {padding-bottom: 6%;}
-    #customization {left: -100%; background-image: url('roads.png'); background-position: center bottom;}
-    .trigger1 #customization {animation: 2s slideforward forwards;}
-    @keyframes slideforward {
-      from {left: -100%;}
-      to {left: 0%;}
-    }
-    #protection {left: 100%; background-image: url('deadend.png'); background-position: center top;}
-    .trigger1 #protection {animation: 2s slideback forwards;}
-    @keyframes slideback {
-      from {left: 100%;}
-      to {left: 0%;}
-    }
-    #section1 .attributes .collapsible {border: none;}
-    #section1 .attributes .collapsible-header:after {content: '\25bc'; float: right; font-size: 80%; color: #ff9800;}
-    #section1 .attributes .collapsible-header.active:after {content: '\25b2';}
-    #section1 .attributes .collapsible-body>div{margin: 0.5em;}
-    #section1 .name {font-size: 90%; font-weight: bold; text-transform: uppercase;}
-    #section1 .name:after {content: '   -   ';}
-    #section2 .switch {float: right; color: #616161; font-size: 60%; font-weight: 300;}
-    #section2 .switch label input[type=checkbox]:checked+.lever:after {background-color: #03a9f4;}
-    #section2 .switch label .lever:after {background-color: #ccc; border: 1px solid #fff; box-shadow: none;}
-    #section2 p {margin-bottom: 2em;}
-    z#section3 {min-height: 300px; background: url('as-2a.png') no-repeat left top; background-attachment: fixed;}
-    #section3 .screenshot {width: 100%;}
-    @media only screen and (min-width: 600px) {
-      #section4 .container {background: url('snowden.png') no-repeat right bottom;}
-    }
+    /* Section 1 - Top banner */
+    #section1 .banner-image {position: relative; height: 400px;}
+    @media only screen and (max-width: 1500px) {#section1 .banner-image {-moz-transform: scale(0.75); -ms-transform: scale(0.75); -o-transform: scale(0.75); -webkit-transform: scale(0.75); transform: scale(0.75);}}
+    #section1 #banner-image-holder {position: absolute; width: 100%; height: 400px; background: url('cloud-badge.png') no-repeat center top; animation: 1s cloudchange forwards;}
+    @keyframes cloudchange {to {background-image: url('empty-cloud.png');}}
+    #section1 #banner-image-holder .person {position: absolute; top: -200px;}
+    #section1 #banner-image-holder .group1 {animation: 0.5s drop 1s cubic-bezier(1,.75,.25,1.4) forwards;}
+    #section1 #banner-image-holder .group2 {animation: 0.5s drop 1.25s cubic-bezier(1,.75,.25,1.4) forwards;}
+    #section1 #banner-image-holder .group3 {animation: 0.5s drop 1.5s cubic-bezier(1,.75,.25,1.4) forwards;}
+    @keyframes drop {from {top: -200px;} to {top: 200px;}}
+
+    /* Section 2 - USPs */
+    #section2 .usp {opacity: 0;}
+    .trigger1 #section2 #usp1 {animation: 0.5s appear forwards;}
+    .trigger1 #section2 #usp2 {animation: 0.5s appear 0.25s forwards;}
+    .trigger1 #section2 #usp3 {animation: 0.5s appear 0.5s forwards;}
+    @keyframes appear {to {opacity: 1;}}
+
+    /* Section 3 - Screenshot */
+    #section3 .switch {float: right; color: #616161; font-size: 60%; font-weight: 300;}
+    #section3 .switch label input[type=checkbox]:checked+.lever:after {background-color: #03a9f4;}
+    #section3 .switch label .lever:after {background-color: #ccc; border: 1px solid #fff; box-shadow: none;}
+    #section3 h5:not(:nth-child(1)) {margin-top: 3rem;}
+
+    /* Section 4 - Screenshot */
+    #section4 .screenshot {width: 100%;}
+
+    /* Section 5 - Properties */
+    #section5 .attributes .collapsible {border: none;}
+    #section5 .attributes .collapsible-header:after {content: '\25bc'; float: right; font-size: 80%; color: #ff9800;}
+    #section5 .attributes .collapsible-header.active:after {content: '\25b2';}
+    #section5 .attributes .collapsible-body>div{margin: 0.5em;}
+    #section5 .name {font-size: 90%; font-weight: bold; text-transform: uppercase;}
+    #section5 .name:after {content: '   -   ';}
+
+    /* Section 6 - Echo Reflect */
+
+    /* Section 7 - Privacy */
+    @media only screen and (min-width: 600px) {#section7 .container {background: url('snowden.png') no-repeat right bottom;}}
   </style>
 </head>
 <body>
   {% include "_navbar.html" with {option: 1} %}
 
   <ul id="sideMenu" class="table-of-contents">
-    <li class="tooltipped" data-position="left" data-tooltip="Intro">
-      <a href="#top-banner"></a>
+    <li class="tooltipped" data-position="left" data-tooltip="Top">
+      <a href="#section1"></a>
     </li>
-    <li class="tooltipped" data-position="left" data-tooltip="Customize content, protect customers">
-      <a href="#customization"></a>
-    </li>
-    <li class="tooltipped" data-position="left" data-tooltip="Look at what you get">
-      <a href="#attributes"></a>
-    </li>
-    <li class="tooltipped" data-position="left" data-tooltip="Easy to setup, simple to use">
+    <li class="tooltipped" data-position="left" data-tooltip="Benefits">
       <a href="#section2"></a>
     </li>
-    <li class="tooltipped" data-position="left" data-tooltip="Pre-cooked screens">
+    <li class="tooltipped" data-position="left" data-tooltip="Quick, simple, cost-effective">
       <a href="#section3"></a>
     </li>
-    <li class="tooltipped" data-position="left" data-tooltip="A word about privacy">
+    <li class="tooltipped" data-position="left" data-tooltip="What it looks like">
       <a href="#section4"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="More you can do">
+      <a href="#section5"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="And even more">
+      <a href="#section6"></a>
     </li>
   </ul>
 
-  <div id="top-banner" class="scrollspy">
-    <div id="pic2" class="effect" style="background: url('ppl-cloud1.png') no-repeat 20% 250px fixed"></div>
-    <div id="pic3" class="effect" style="background: url('ppl-cloud2.png') no-repeat 20% 250px fixed; opacity: 0;"></div>
+  <div id="section1" class="section scrollspy">
     <div class="container">
       <div class="row">
-        <div class="col s12 l6 offset-l6 center">
-          <h1>Account Protection<br>web service</h1>
-          <h5>Keep your online customers safe - quickly, simply, cost effectively</h5>
+        <div class="banner-image col s12 m12 l6 center-align">
+          <div id="banner-image-holder">
+            <img class="person group1" src="person1.png" style="margin: -131px 0 0 -155px;">
+            <img class="person group2" src="person2.png" style="margin: -182px 0 0 -47px;">
+            <img class="person group3" src="person3.png" style="margin: -90px 0 0 30px;">
+            <img class="person group1" src="person4.png" style="margin: -7px 0 0 -140px;">
+            <img class="person group2" src="person5.png" style="margin: -7px 0 0 -40px;">
+            <img class="person group3" src="person6.png" style="margin: -50px 0 0 128px;">
+            <img class="person group1" src="person7.png" style="margin: -183px 0 0 47px;">
+            <img class="person group2" src="person8.png" style="margin: -50px 0 0 -229px;">
+            <img class="person group3" src="person9.png" style="margin: 6px 0 0 50px;">
+            <img class="person group1" src="person10.png" style="margin: -91px 0 0 -71px;">
+            <img class="person group2" src="person-1.png" style="margin: -165px 0 0 -265px;">
+            <img class="person group3" src="person-2.png" style="margin: -161px 0 0 170px;">
+          </div>
+        </div>
+        <div class="col s12 m12 l6 center">
+          <h1>Account Protection<br>for your online business</h1>
+          <h5>Keep your customers safe and your business reputation intact</h5>
           <br>
           <div class="divider"></div>
           <br>
@@ -103,44 +129,93 @@
         </div>
       </div>
     </div>
-    <div class="fader"></div>
-    <!--div class="parallax hide-on-small-only"><img src="as-diag.png"></div-->
   </div>
 
-  <div id="section0">
-
-    <div id="customization" class="section scrollspy">
-      <div class="container row">
-        <div class="col s10 m10 l9">
-          <h2>Let our device recognition . . .</h2>
-          <h3>Protect your customers</h3>
-          <p><em>Account Shield</em> lets you provide the account security features customers have come to expect, such as :</p>
-          <ul>
-            <li>A history of logins<br>
-              - with locations<br>
-              - with device details
-            </li>
-            <li>Management of allowed access devices</li>
-          </ul>
+  <div id="section2" class="section scrollspy">
+    <div class="container row">
+      <div id="usp1" class="usp col s12 m4">
+        <div class="row">
+          <div class="col s6 m12 center-align">
+            <img class="responsive-img" src="mfa.png" alt="bad person">
+          </div>
+          <div class="col s6 m12">
+            <h4>Frictionless MFA</h4>
+            <p>Let <em>Account Shield</em> silently add muti-factor authentication (MFA) to your user accounts. By comparing characteristics of the user's device and connection, <em>Account Shield</em> provides an additional layer of security without the user needing to do anything extra.</p>
+          </div>
+        </div>
+      </div>
+      <div id="usp2" class="usp col s12 m4">
+        <div class="row">
+          <div class="col s6 m12 center-align">
+            <img class="responsive-img" src="person-bad.png" alt="bad person">
+          </div>
+          <div class="col s6 m12">
+            <h4>Stop account takeover</h4>
+            <p>Online fraud is one of the fastest growing crimes, with hundreds of millions of compromised credentials available on the Internet, and thousands of victims every single day. <em>Account Shield</em> stops unauthorized access, even when the perpetrator has correct username/password details.</p>
+          </div>
+        </div>
+      </div>
+      <div id="usp3" class="usp col s12 m4">
+        <div class="row">
+          <div class="col s6 m12 center-align">
+            <img class="responsive-img" src="puppet.png" alt="puppet">
+          </div>
+          <div class="col s6 m12">
+            <h4>Beat money laundering</h4>
+            <p>Your business could be unwittingly aiding and abetting money laundering. <em>Account Shield</em> can alert you where multiple accounts are being used by the same people, and stop existing users from creating new accounts even if they use entirely different names and addresses.</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <div id="protection" class="section no-margin scrollspy">
-      <div class="container row">
-        <div class="col s10 offset-s2 m9 offset-m3 l8 offset-l4">
-          <h3 class="right-align">Protect your business</h3>
-          <p>Identity theft is one of the fastest growing crimes of our age, and with hundreds of millions of leaked user credentials floating around the Internet, how long will it be before one of your accounts is compromised?</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <div id="section1" class="section container">
+  <div id="section3" class="section container scrollspy">
+      <div class="row">
+        <div class="col s12 center-align">
+          <h2>
+            <i class="material-icons large light-blue-text text-lighten-3">flash_on</i><br>
+            Quick setup &nbsp; &bull; &nbsp; Simple to use &nbsp; &bull; &nbsp; Cost-effective
+          </h2>
+          <h5><em>Account Shield</em> plays nice with your online system, whether you've built your own custom website, use a content management / shopping cart system, or license a third-party solution.</h5>
+          <br>
+        </div>
+        <div class="col s12 m6">
+          <h5><i class="material-icons">done</i> Quick setup</h5>
+          <p>It's simple to get started - <a href="signup.html">sign up</a> and you get a small code snippet to cut and paste on to your web pages. In minutes you can be up and running with basic functionality. Add a simple server-side call to <em>Account Shield</em> when users log in, and unlock the full power of the service.</p>
+          <!--p>Full <a href="documentation.html">documentation and code examples</a> are available to get you up and running. We are even working to provide plug-ins that will do the work for you, for popular CMS and shopping cart systems like Wordpress, Joomla, and Magneto.</p-->
+          <h5><i class="material-icons">done</i> Simple to use - for you</h5>
+          <p>Configuration is through an easy-to-use web dashboard, which also gives you an instant handle on what's going on. See and explore users - where they're coming from, what they're doing - and be alerted to threats.</p>
+        </div>
+        <div class="col s12 m6">
+          <h5><i class="material-icons">done</i> Simple to use - for your users</h5>
+          <p><em>Account Shield</em> works the way your users have come to expect from their experience with sites like Google, Yahoo and Facebook. They can get a list of account activity, manage which devices they allow access to, and get alerted when someone tries to login from an unknown device. Check out the <a href="showcase.html">Showcase</a> for pictures of these screens and a full interactive demo.</p>
+          <h5><i class="material-icons">done</i> Cost-effective</h5>
+          <p><em>Account Shield</em> provides protection for your users and your business from just 1&cent; per user/per month. And there's no lock-in - cancel your subscription any time and your website simple reverts to working as before. See <a href="pricing.html">Pricing</a> for full details.</p>
+        </div>
+      </div>
+  </div>
+
+  <div id="section4" class="section scrollspy">
+    <div class="row">
+      <h2 class="container">
+        <i class="material-icons large light-blue-text text-lighten-3">folder_shared</i>
+        Even easier with our out-of-the-box end-user pages
+      </h2>
+      <div class="col s12 m6">
+        <img class="screenshot z-depth-2" src="as-2a.png">
+      </div>
+      <div class="col s12 m4">
+        <p>We provide the end-user pages you need to cover common use cases such as reviewing login history and managing devices - no need to write a line of code.</p>
+        <p>Need more control? Download all our pages, and other code examples, to create your own fully integrated solution, fast.</p>
+        <p>All our pages are fully responsive, follow the latest Material Design guidelines, and can be easily customized.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="section5" class="section container scrollspy">
     <div class="row center">
-      <h2>Look at what you get!</h2>
-      <h5 id="attributes" class="scrollspy">Here are some of the details available to you server-side <!--sup class="light">(recommended)</sup--> and/or client-side, once you enable <em>Account Shield</em>:</h5>
+      <h2>And there's more</h2>
+      <h5 id="attributes" class="scrollspy"><em>Account Shield</em> gives you powerful capabilities to easily customize user content and journeys based on a wide range of characteristics:</h5>
     </div>
     <div class="attributes row">
       <div class="col s6">
@@ -256,67 +331,23 @@
         </ul>
       </div>
     </div>
-    <div class="row center">See all that's available in our <a href="documentation.html">documentation</a>.</div>
+    <div class="row center">See the <a href="documentation.html">Documentation</a> for all the good stuff that's available.</div>
   </div>
 
-  <div id="section2" class="section container scrollspy">
-      <div class="row">
-        <h2>
-          <i class="material-icons large light-blue-text text-lighten-3">flash_on</i>
-          Quick to setup, simple to use
-        </h2>
-        <div class="col s12 m6">
-          <p>Add a couple of lines in the <code>&lt;head&gt;</code> tag of your web pages, and you're good to go.</p>
-          <p>If you want to tie devices and connections to users, you will also need to make a simple server-side call to <em>Account Shield</em> when you have identified a user (usually at login).</p>
-          <p>We provide full code examples to get you up and running in next to no time, and even provide plug-ins that do the work for you, for popular CMS and shopping cart systems like Wordpress, Joomla, and Magneto.</p>
-          <p>What are you waiting for?</p>
-        </div>
-        <div class="col s12 m6">
-          <h5>
-            <span>Client-side Markup</span>
-            <span class="switch"><label>Off<input type="checkbox" checked><span class="lever light-blue lighten-3"></span>On</label></span>
-          </h5>
-          <p>With this option, <em>Account Shield</em> can add the details you want as attributes to the <code>&lt;body&gt;</code> tag of your page. This works well if you wish to use CSS to show/hide content based on factors like whether the user is a repeat visitor.</p>
-          <h5>
-            <span>Client-side Javascript</span>
-            <span class="switch"><label>Off<input type="checkbox" checked><span class="lever light-blue lighten-3"></span>On</label></span>
-          </h5>
-          <p>Choose this option and <em>Account Shield</em> will create a Javascript object on your page, providing access to all the user, device and connection details. This is the most powerful client-side option, allowing you, through code, to make any aspect of your site responsive to the user's details.</p>
-          <h5>
-            <span>Server-side REST calls</span>
-            <span class="switch"><label>Off<input type="checkbox" checked><span class="lever light-blue lighten-3"></span>On</label></span>
-          </h5>
-          <p>The preferred and most secure option is to call <em>Account Shield</em> from your server-side code.  This is easily achieved through a simple to use REST interface.</p>
-        </div>
-      </div>
-  </div>
-
-  <div id="section3" class="section scrollspy">
+  <div id="section6" class="section container scrollspy">
     <div class="row">
-        <h2 class="container">
-          <i class="material-icons large light-blue-text text-lighten-3">folder_shared</i>
-          Even easier with our template end-user pages
-        </h2>
-      <div class="col s12 m6">
-        <img class="screenshot z-depth-2" src="as-2a.png">
-      </div>
-      <div class="col s12 m4">
-        <p>We also provide template code for your end-user pages to cover common use cases such as reviewing login history. Now you can quickly provide the sort of functionality to your end-users that they are used to seeing from Google, Facebook, or other major sites which take security seriously.</p>
-        <p>All our pages are fully responsive, follow the latest Material Design guidelines, and can be easily customized.</p>
+      <div class="col s12 center-align">
+        <h2>And even more!</h2>
+        <h5>Combine <em>Account Shield</em> with our innovative <a href="http://www.echoreflect.com" target="er">Echo Reflect</a> capability, and have user sessions recorded</h5>
       </div>
     </div>
-  </div>
-
-  <div id="section4" class="section scrollspy">
-    <div class="container">
-      <div class="row">
-        <div class="col m9">
-          <h1>A word about privacy</h1>
-          <p>We are not the NSA or GCHQ, nor do we approve the tracking of peoples' online activity. In fact one of our greatest tech heroes is <a href="https://en.wikipedia.org/wiki/Edward_Snowden">Edward Snowden</a>, and we stand with him, the <a href="https://www.eff.org/">EFF</a>, and many other like-minded people, on the side of defending civil liberties in the digital world.</p>
-          <p>While the capabilities provided by <em>Account Shield</em> are very powerful, we have deliberately blocked their use <b>across</b> domains - the user, device, and connection IDs that we generate are unique to each domain that uses <em>Account Shield</em>. Unlike other anti-fraud companies, we do not maintain a global database of devices, neither do we share information between our clients.</p>
-          <p>We do, however, believe that each company has the right to monitor its online visitors, just as a physical store might have security guards or CCTV in its premises. For our customers, we recommend that they place an appropriate disclaimer in the footer of their website.</p>
-          <p>We believe that our service strikes an appropriate balance in this area, but we welcome contributions to the debate in our forum here.</p>
-        </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <p>By adding the power of Echo Reflect, you can automatically record user sessions for later playback and analysis. See every scroll, mouse move, click, and page turn.  Easily gather a visual audit to help prosecute fraud and resolve disputes.
+        </p>
+      </div>
+      <div class="col s12 m6">
+        <img class="responsive-img z-depth-2" src="er-player-small-low.png" alt="Screen player">
       </div>
     </div>
   </div>
@@ -328,45 +359,15 @@
   <script>
     (function($){
       $(function(){
-        $(window).scroll(picshifter);
-
         $('.button-collapse').sideNav();
-        //$('.parallax').parallax();
         $('.scrollspy').scrollSpy();
 
         var options = [
-          {selector: '#top-banner', offset: 1200, callback: '$("body").addClass("trigger1")'}
+          {selector: '#section1', offset: 1200, callback: '$("body").addClass("trigger1")'}
         ];
         Materialize.scrollFire(options);
       });
     })(jQuery);
-
-    function picshifter(){
-      var pos = document.body.scrollTop;
-      var posMin = 0, posMax = 300;
-      var onetime = false;
-
-      if (pos >= posMin && pos <= posMax) {
-        //var pic1Start = 0, pic1End = 200;
-        var pic2Start = 100, pic2End = 0;
-        var pic3Start = 0, pic3End = 100;
-        var posPercent = ~~((pos-posMin)*100/posMax)/100;
-        //var pic1Pos = (Math.abs(pic1End-pic1Start)*posPercent) + (pic1Start < pic1End ? pic1Start : pic1End);
-        //var pic2Pos = (Math.abs(pic2End-pic2Start)*posPercent) + (pic2Start < pic2End ? pic2Start : pic2End);
-        //var pic2Pos = (pic2Start < pic2End ? pic2Start + (Math.abs(pic2End-pic2Start)*posPercent) : pic2Start - (Math.abs(pic2End-pic2Start)*posPercent));
-        //var pic3Pos = (pic3Start < pic3End ? pic3Start + (Math.abs(pic3End-pic3Start)*posPercent) : pic3Start - (Math.abs(pic3End-pic3Start)*posPercent));
-
-        //console.log(pic1Pos, pic3Pos);
-
-        //$('#top-banner #pic1').css('opacity', 1-posPercent*2);
-        $('#top-banner #pic2').css('opacity', 1-posPercent);
-        $('#top-banner #pic3').css('opacity', posPercent);
-      } else if (!onetime) {
-        $('#top-banner #pic2').css('opacity', 0);
-        $('#top-banner #pic3').css('opacity', 1);
-        onetime = true;
-      }
-    }
   </script>
 </body>
 </html>

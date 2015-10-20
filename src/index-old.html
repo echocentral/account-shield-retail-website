@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Account Shield</title>
+  {% include "_head.html" %}
+
+  <style>
+    body {font-weight: 300; font-size: 16px;}
+    a {color: #ff9800;}
+    h1 {font-weight: 200; color: #000;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #000;}
+    .trigger1 nav li:last-child {background-color: #ffa726;}
+    #sideMenu {position: fixed; top: 50%; transform: translateY(-50%); right: 20px; z-index: 99999;}
+    #sideMenu li a {width: 12px; height: 12px; border-radius: 50%; border: 2px solid #81d4fa; background: #FFF; display: block; margin: 10px 0; -webkit-transition: all 300ms ease; -moz-transition: all 300ms ease; -ms-transition: all 300ms ease; -o-transition: all 300ms ease; transition: all 300ms ease;}
+    .table-of-contents li {padding: inherit;}
+    .table-of-contents a {display: initial; font-weight: inherit; color: inherit; padding-left: inherit; height: auto; line-height: normal; letter-spacing: normal;}
+    .table-of-contents a:hover {color: inherit; padding-left: inherit; border-left: none;}
+    .table-of-contents a.active {font-weight:inherit; padding-left: inherit; border-left: none; background-color: #ff9800 !important; border-color: #ff9800 !important;}
+    .parallax-container {height: 550px;}
+    #section1, #section2, #section3, footer {margin-top: 8rem;}
+    .btn-large i.large {font-size: 3rem; line-height: 1.33;}
+
+    #top-banner {position: relative; padding-top: 150px;}
+    #top-banner .effect {position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-repeat: no-repeat; transition: background-position opacity 0.1s;}
+    #top-banner .col:first-child {position: relative; padding-bottom: 30%; background-color: rgba(255,255,255,0.85);}
+    #top-banner .fader {position: absolute; top: 50%; bottom: 0; width: 100%; background: linear-gradient(to top, #fff, rgba(255,255,255,0));}
+    #section0 {overflow-x: hidden; zpadding-top: 10%; zbackground: linear-gradient(to bottom, #fff 15%, rgba(255,255,255,0));}
+    #section0 li {list-style: circle inside;}
+    #customization, #protection {position: relative; background-repeat: no-repeat; background-size: contain;}
+    #customization .col {padding-bottom: 6%;}
+    #customization {left: -100%; background-image: url('roads.png'); background-position: center bottom;}
+    .trigger1 #customization {animation: 2s slideforward forwards;}
+    @keyframes slideforward {
+      from {left: -100%;}
+      to {left: 0%;}
+    }
+    #protection {left: 100%; background-image: url('deadend.png'); background-position: center top;}
+    .trigger1 #protection {animation: 2s slideback forwards;}
+    @keyframes slideback {
+      from {left: 100%;}
+      to {left: 0%;}
+    }
+    #section1 .attributes .collapsible {border: none;}
+    #section1 .attributes .collapsible-header:after {content: '\25bc'; float: right; font-size: 80%; color: #ff9800;}
+    #section1 .attributes .collapsible-header.active:after {content: '\25b2';}
+    #section1 .attributes .collapsible-body>div{margin: 0.5em;}
+    #section1 .name {font-size: 90%; font-weight: bold; text-transform: uppercase;}
+    #section1 .name:after {content: '   -   ';}
+    #section2 .switch {float: right; color: #616161; font-size: 60%; font-weight: 300;}
+    #section2 .switch label input[type=checkbox]:checked+.lever:after {background-color: #03a9f4;}
+    #section2 .switch label .lever:after {background-color: #ccc; border: 1px solid #fff; box-shadow: none;}
+    #section2 p {margin-bottom: 2em;}
+    z#section3 {min-height: 300px; background: url('as-2a.png') no-repeat left top; background-attachment: fixed;}
+    #section3 .screenshot {width: 100%;}
+    @media only screen and (min-width: 600px) {
+      #section4 .container {background: url('snowden.png') no-repeat right bottom;}
+    }
+  </style>
+</head>
+<body>
+  {% include "_navbar.html" with {option: 1} %}
+
+  <ul id="sideMenu" class="table-of-contents">
+    <li class="tooltipped" data-position="left" data-tooltip="Intro">
+      <a href="#top-banner"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="Customize content, protect customers">
+      <a href="#customization"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="Look at what you get">
+      <a href="#attributes"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="Easy to setup, simple to use">
+      <a href="#section2"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="Pre-cooked screens">
+      <a href="#section3"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="A word about privacy">
+      <a href="#section4"></a>
+    </li>
+  </ul>
+
+  <div id="top-banner" class="scrollspy">
+    <div id="pic2" class="effect" style="background: url('ppl-cloud1.png') no-repeat 20% 250px fixed"></div>
+    <div id="pic3" class="effect" style="background: url('ppl-cloud2.png') no-repeat 20% 250px fixed; opacity: 0;"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l6 offset-l6 center">
+          <h1>Account Protection<br>web service</h1>
+          <h5>Keep your online customers safe - quickly, simply, cost effectively</h5>
+          <br>
+          <div class="divider"></div>
+          <br>
+          <div class="col s6">
+            <a class="waves-effect waves-light btn-large white black-text" href="#customization"><i class="material-icons right small">keyboard_arrow_down</i>Find out more . . .</a>
+          </div>
+          <div class="col s6">
+            <a class="waves-effect waves-light btn-large orange" href="signup.html"><i class="material-icons right">keyboard_arrow_right</i>Sign up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fader"></div>
+    <!--div class="parallax hide-on-small-only"><img src="as-diag.png"></div-->
+  </div>
+
+  <div id="section0">
+
+    <div id="customization" class="section scrollspy">
+      <div class="container row">
+        <div class="col s10 m10 l9">
+          <h2>Let our device recognition . . .</h2>
+          <h3>Protect your customers</h3>
+          <p><em>Account Shield</em> lets you provide the account security features customers have come to expect, such as :</p>
+          <ul>
+            <li>A history of logins<br>
+              - with locations<br>
+              - with device details
+            </li>
+            <li>Management of allowed access devices</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="protection" class="section no-margin scrollspy">
+      <div class="container row">
+        <div class="col s10 offset-s2 m9 offset-m3 l8 offset-l4">
+          <h3 class="right-align">Protect your business</h3>
+          <p>Identity theft is one of the fastest growing crimes of our age, and with hundreds of millions of leaked user credentials floating around the Internet, how long will it be before one of your accounts is compromised?</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="section1" class="section container">
+    <div class="row center">
+      <h2>Look at what you get!</h2>
+      <h5 id="attributes" class="scrollspy">Here are some of the details available to you server-side <!--sup class="light">(recommended)</sup--> and/or client-side, once you enable <em>Account Shield</em>:</h5>
+    </div>
+    <div class="attributes row">
+      <div class="col s6">
+        <ul class="collapsible z-depth-0">
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">perm_identity</i> User
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">User seen on site</span>
+                <span class="value">Boolean flag, to indicate whether that user has visited the site before.</span>
+              </div>
+              <div>
+                <span class="name">User seen on page</span>
+                <span class="value">Boolean flag, to indicate whether that user has visited the page before.</span>
+              </div>
+              <div>
+                <span class="name">User last seen</span>
+                <span class="value">Date when this user last accessed this site.</span>
+              </div>
+              <div>
+                <span class="name">User's devices</span>
+                <span class="value">Array of devices associated with the user.</span>
+              </div>
+              <div>
+                <span class="name">User's connections</span>
+                <span class="value">Array of connections associated with the user.</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">devices</i> Device
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">Device seen on site</span>
+                <span class="value">Boolean flag, to indicate whether that device has visited the site before.</span>
+              </div>
+              <div>
+                <span class="name">Device seen on page</span>
+                <span class="value">Boolean flag, to indicate whether that device has visited the page before.</span>
+              </div>
+              <div>
+                <span class="name">Device last seen</span>
+                <span class="value">Date when this device last accessed this site.</span>
+              </div>
+              <div>
+                <span class="name">Device type</span>
+                <span class="value">One of 'Mobile', 'Phablet', 'Tablet', 'Laptop' or 'Desktop'.</span>
+              </div>
+              <div>
+                <span class="name">Device metrics</span>
+                <span class="value">A host of properties describing the device, including: platform, browser, languages, screen dimensions, device orientation, etc.</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col s6">
+        <ul class="collapsible z-depth-0">
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">wifi_tethering</i> Connection
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">IP Address</span>
+                <span class="value">Text string, providing the public IP address used by the connection.</span>
+              </div>
+              <div>
+                <span class="name">Connection seen on site</span>
+                <span class="value">Boolean flag, to indicate whether that connection has been used to visit the site before.</span>
+              </div>
+              <div>
+                <span class="name">Connection seen on page</span>
+                <span class="value">Boolean flag, to indicate whether that connection has been used to visit the page before.</span>
+              </div>
+              <div>
+                <span class="name">Connection last seen</span>
+                <span class="value">Date when this connection was last used to access this site.</span>
+              </div>
+              <div>
+                <span class="name">Connection Type</span>
+                <span class="value">One of 'Fixed', or 'Mobile'.</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">place</i> Location
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">Location co-ordinates</span>
+                <span class="value">Comma separated list of a latitude and longitude position of the city nearest to the location of the device.</span>
+              </div>
+              <div>
+                <span class="name">Country code</span>
+                <span class="value">A two character ISO code indicating the country where the device is located.</span>
+              </div>
+              <div>
+                <span class="name">Region</span>
+                <span class="value">A text string indicating the region of the country where the device is located.</span>
+              </div>
+              <div>
+                <span class="name">City</span>
+                <span class="value">A text string indicating the city nearest to the location of the device.</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row center">See all that's available in our <a href="documentation.html">documentation</a>.</div>
+  </div>
+
+  <div id="section2" class="section container scrollspy">
+      <div class="row">
+        <h2>
+          <i class="material-icons large light-blue-text text-lighten-3">flash_on</i>
+          Quick to setup, simple to use
+        </h2>
+        <div class="col s12 m6">
+          <p>Add a couple of lines in the <code>&lt;head&gt;</code> tag of your web pages, and you're good to go.</p>
+          <p>If you want to tie devices and connections to users, you will also need to make a simple server-side call to <em>Account Shield</em> when you have identified a user (usually at login).</p>
+          <p>We provide full code examples to get you up and running in next to no time, and even provide plug-ins that do the work for you, for popular CMS and shopping cart systems like Wordpress, Joomla, and Magneto.</p>
+          <p>What are you waiting for?</p>
+        </div>
+        <div class="col s12 m6">
+          <h5>
+            <span>Client-side Markup</span>
+            <span class="switch"><label>Off<input type="checkbox" checked><span class="lever light-blue lighten-3"></span>On</label></span>
+          </h5>
+          <p>With this option, <em>Account Shield</em> can add the details you want as attributes to the <code>&lt;body&gt;</code> tag of your page. This works well if you wish to use CSS to show/hide content based on factors like whether the user is a repeat visitor.</p>
+          <h5>
+            <span>Client-side Javascript</span>
+            <span class="switch"><label>Off<input type="checkbox" checked><span class="lever light-blue lighten-3"></span>On</label></span>
+          </h5>
+          <p>Choose this option and <em>Account Shield</em> will create a Javascript object on your page, providing access to all the user, device and connection details. This is the most powerful client-side option, allowing you, through code, to make any aspect of your site responsive to the user's details.</p>
+          <h5>
+            <span>Server-side REST calls</span>
+            <span class="switch"><label>Off<input type="checkbox" checked><span class="lever light-blue lighten-3"></span>On</label></span>
+          </h5>
+          <p>The preferred and most secure option is to call <em>Account Shield</em> from your server-side code.  This is easily achieved through a simple to use REST interface.</p>
+        </div>
+      </div>
+  </div>
+
+  <div id="section3" class="section scrollspy">
+    <div class="row">
+        <h2 class="container">
+          <i class="material-icons large light-blue-text text-lighten-3">folder_shared</i>
+          Even easier with our template end-user pages
+        </h2>
+      <div class="col s12 m6">
+        <img class="screenshot z-depth-2" src="as-2a.png">
+      </div>
+      <div class="col s12 m4">
+        <p>We also provide template code for your end-user pages to cover common use cases such as reviewing login history. Now you can quickly provide the sort of functionality to your end-users that they are used to seeing from Google, Facebook, or other major sites which take security seriously.</p>
+        <p>All our pages are fully responsive, follow the latest Material Design guidelines, and can be easily customized.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="section4" class="section scrollspy">
+    <div class="container">
+      <div class="row">
+        <div class="col m9">
+          <h1>A word about privacy</h1>
+          <p>We are not the NSA or GCHQ, nor do we approve the tracking of peoples' online activity. In fact one of our greatest tech heroes is <a href="https://en.wikipedia.org/wiki/Edward_Snowden">Edward Snowden</a>, and we stand with him, the <a href="https://www.eff.org/">EFF</a>, and many other like-minded people, on the side of defending civil liberties in the digital world.</p>
+          <p>While the capabilities provided by <em>Account Shield</em> are very powerful, we have deliberately blocked their use <b>across</b> domains - the user, device, and connection IDs that we generate are unique to each domain that uses <em>Account Shield</em>. Unlike other anti-fraud companies, we do not maintain a global database of devices, neither do we share information between our clients.</p>
+          <p>We do, however, believe that each company has the right to monitor its online visitors, just as a physical store might have security guards or CCTV in its premises. For our customers, we recommend that they place an appropriate disclaimer in the footer of their website.</p>
+          <p>We believe that our service strikes an appropriate balance in this area, but we welcome contributions to the debate in our forum here.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "_footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $(window).scroll(picshifter);
+
+        $('.button-collapse').sideNav();
+        //$('.parallax').parallax();
+        $('.scrollspy').scrollSpy();
+
+        var options = [
+          {selector: '#top-banner', offset: 1200, callback: '$("body").addClass("trigger1")'}
+        ];
+        Materialize.scrollFire(options);
+      });
+    })(jQuery);
+
+    function picshifter(){
+      var pos = document.body.scrollTop;
+      var posMin = 0, posMax = 300;
+      var onetime = false;
+
+      if (pos >= posMin && pos <= posMax) {
+        //var pic1Start = 0, pic1End = 200;
+        var pic2Start = 100, pic2End = 0;
+        var pic3Start = 0, pic3End = 100;
+        var posPercent = ~~((pos-posMin)*100/posMax)/100;
+        //var pic1Pos = (Math.abs(pic1End-pic1Start)*posPercent) + (pic1Start < pic1End ? pic1Start : pic1End);
+        //var pic2Pos = (Math.abs(pic2End-pic2Start)*posPercent) + (pic2Start < pic2End ? pic2Start : pic2End);
+        //var pic2Pos = (pic2Start < pic2End ? pic2Start + (Math.abs(pic2End-pic2Start)*posPercent) : pic2Start - (Math.abs(pic2End-pic2Start)*posPercent));
+        //var pic3Pos = (pic3Start < pic3End ? pic3Start + (Math.abs(pic3End-pic3Start)*posPercent) : pic3Start - (Math.abs(pic3End-pic3Start)*posPercent));
+
+        //console.log(pic1Pos, pic3Pos);
+
+        //$('#top-banner #pic1').css('opacity', 1-posPercent*2);
+        $('#top-banner #pic2').css('opacity', 1-posPercent);
+        $('#top-banner #pic3').css('opacity', posPercent);
+      } else if (!onetime) {
+        $('#top-banner #pic2').css('opacity', 0);
+        $('#top-banner #pic3').css('opacity', 1);
+        onetime = true;
+      }
+    }
+  </script>
+</body>
+</html>

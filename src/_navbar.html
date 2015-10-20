@@ -1,14 +1,9 @@
 <div class="navbar-fixed">
 	<style type="text/css" scoped>
+    	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {height: 64px !important; line-height: 64px !important;}
 		.nav-wrapper a, .nav-wrapper img {height: inherit;}
 		.nav-wrapper .brand-logo i {display: inline-block; font-size: 3rem;}
 		.nav-wrapper .brand-logo sup {font-weight: 200;}
-		@media only screen and (max-width: 992px) {
-			nav .brand-logo {left: 25%;}
-		}
-		@media only screen and (max-width: 600px) {
-			nav .brand-logo {left: 75%;}
-		}
 		nav .button-collapse i {font-size: 2rem;}
 	</style>
 	<nav class="light-blue lighten-3" role="navigation">
@@ -17,7 +12,7 @@
 				<i class="material-icons">verified_user</i>
 				<sup>Account Shield</sup>
 			</a>
-			<ul class="right hide-on-small-only">
+			<ul class="right hide-on-med-and-down">
 				<li {% if option == 1 %} class="active"{% endif %}><a href="index.html">Tour</a></li>
 				<li {% if option == 2 %} class="active"{% endif %}><a href="showcase.html">Showcase</a></li>
 				<li {% if option == 3 %} class="active"{% endif %}><a href="pricing.html">Pricing</a></li>
@@ -31,7 +26,7 @@
 				<li {% if option == 4 %} class="active"{% endif %}><a href="documentation.html">Documentation</a></li>
 				<li {% if option == 5 %} class="active"{% endif %}><a href="signup.html">Sign up</a></li>
 			</ul>
-			<a href="#" class="button-collapse hide-on-med-and-up" data-activates="nav-mobile"><i class="material-icons small">menu</i></a>
+			<a href="#" class="button-collapse hide-on-large-only" data-activates="nav-mobile"><i class="material-icons small">menu</i></a>
 		</div>
 	</nav>
 </div>
