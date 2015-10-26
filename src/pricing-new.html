@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-user-new data-connection-country="UK">
+<head>
+  <title>Account Shield - Pricing</title>
+  {% include "_head.html" %}
+
+  <style>
+    body {font-weight: 300; font-size: 16px;}
+    h1 {font-weight: 200; color: #000;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #000;}
+    .trigger1 nav li:last-child {background-color: #ffa726;}
+    .btn-large i.large {font-size: 3rem; line-height: 1.33;}
+    #section1, #section3, footer {margin-top: 8rem;}
+
+    #section1 {background: url('free.png') no-repeat right top;}
+    #section1 .spacer {height: 100px;}
+
+    #section2 td {font-weight: 400;}
+    #section2 th:nth-child(2), #section2 td:nth-child(2) {text-align: right;}
+
+    z#section2 .switch {display: inline-block; width: 20rem; text-align: center; border: 4px solid transparent; transition: border-color 0.5s;}
+    z.prompt-show #section2 .switch {border-color: #81d4fa;}
+    z#section2 .switch .prompt {padding: 0.1rem; background-color: #fff; color: #fff; transition: background-color 0.5s;}
+    z.prompt-show #section2 .switch .prompt {background-color: #81d4fa;}
+    z#section2 .switch label {display: inline-block; margin: 0.5rem;}
+    z#section2 .switch label .lever:after {background-color: #ffa726 !important; border: 2px solid #fff; box-shadow: none;}
+    z#section2 .value {font-size: 800%; letter-spacing: -6px; text-shadow: 6px 4px 0 #ff9800;}
+    z#section2 .bordered {padding: 1rem; border-right: none; border-bottom: none;}
+    z#section2>.row>.col:last-child .bordered {border-right: 2px solid #ffe0b2;}
+    z#section2>.row>.col .bordered:last-of-type {border-bottom: 2px solid #ffe0b2;}
+    z#section2 .standout {padding-bottom: 0.94rem; font-size: 110%; font-weight: 400;}
+    z#section2 .btn {margin: 2rem 0 4rem;}
+    z#section2 .annual {display: none;}
+    z.annual #section2 .monthly {display: none;}
+    z.annual #section2 .annual {display: inline;}
+
+    [class^=show-if] {display: none;}
+    [data-user-new] [class="show-if(user-new)"] {display: block;}
+    [data-user-new] .\@hide-if\(user-new\) {display: none;}
+    /* use in class names like so: class="@show-if(user-new)" */
+  </style>
+</head>
+<body class="trigger1 prompt-show">
+  {% include "_navbar.html" with {option: 3} %}
+
+  <div id="section1" class="section container center">
+    <div class="spacer hide-on-large-only"></div>
+    <div class="spacer hide-on-med-and-up"></div>
+    <div class="row">
+      <h1>Great Pricing</h1>
+      <h4>Pay only for what you use<br>Fully transparent pricing - no hidden fees</h4>
+    </div>
+  </div>
+
+  <div id="section2" class="section container center">
+    <div class="divider orange"></div>
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <table class="bordered">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Charge<br>(USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Non-logged in sessions
+                <div class="light">Cost for each tracked non-logged in session</div>
+              </td>
+              <td>$0.01</td>
+            </tr>
+            <tr>
+              <td>Logged in sessions
+                <div class="light">Cost for each tracked logged in session<span class="tooltipped" data-tooltip="Note: A session is charged at the logged in rate, if the user logs in at any time during the session">*</span></div>
+              </td>
+              <td>$0.02</td>
+            </tr>
+            <tr>
+              <td>One-time code support
+                <div class="light">Additional flat monthly fee if the facility to send one time codes is required</div>
+              </td>
+              <td>+ $20.00</td>
+            </tr>
+            <tr>
+              <td>Session recording
+                <div class="light">Additional flat monthly fee if the facility to record sessions is required</div>
+              </td>
+              <td>+ $20.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p>
+      <br>
+      <a class="waves-effect waves-light btn orange center"><i class="material-icons left">shopping_cart</i>Sign Up</a>
+    </p>
+  </div>
+
+  <div class="container divider orange"></div>
+
+  <div id="section3" class="section container">
+        <div class="col s12 orange lighten-2 white-text"><h2>Large</h2></div>
+        <div class="orange lighten-3 white-text"><span class="currency">$</span><span class="value monthly">790</span><span class="value annual">7,900</span><span class="suffix monthly">/mo</span><span class="suffix annual">/pa</span></div>
+        <div class="bordered standout">Cover upto <b>10</b> domain</div>
+        <div class="bordered standout">Protect upto <b>100,000</b> accounts</div>
+        <div class="bordered standout">Track users</div>
+        <div class="bordered standout">Track devices & connections</div>
+        <div class="bordered">Server-side REST</div>
+        <div class="bordered">Client-side Markup and JS</div>
+        <div class="bordered">Enhanced discovery</div>
+        <div class="bordered">Downloadable templates</div>
+        <div class="bordered">Premium support</div>
+    <p>Need more? <em>Account Shield</em> is capable of supporting the largest and most demanding of enterprise applications. Just <a href="#">contact us</a> to begin a discussion.</p>
+  </div>
+
+  {% include "_footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $('.button-collapse').sideNav();
+      }); // end of document ready
+    })(jQuery); // end of jQuery name space
+  </script>
+  </body>
+</html>

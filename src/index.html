@@ -35,7 +35,7 @@
     @media only screen and (max-width: 1500px) {#section1 .banner-image {-moz-transform: scale(0.75); -ms-transform: scale(0.75); -o-transform: scale(0.75); -webkit-transform: scale(0.75); transform: scale(0.75);}}
     #section1 #banner-image-holder {position: absolute; width: 100%; height: 400px; background: url('cloud-badge.png') no-repeat center top; animation: 1s cloudchange forwards;}
     @keyframes cloudchange {to {background-image: url('empty-cloud.png');}}
-    #section1 #banner-image-holder .person {position: absolute; top: -200px;}
+    #section1 #banner-image-holder .person {position: absolute; top: -200px; left: 50%;}
     #section1 #banner-image-holder .group1 {animation: 0.5s drop 1s cubic-bezier(1,.75,.25,1.4) forwards;}
     #section1 #banner-image-holder .group2 {animation: 0.5s drop 1.25s cubic-bezier(1,.75,.25,1.4) forwards;}
     #section1 #banner-image-holder .group3 {animation: 0.5s drop 1.5s cubic-bezier(1,.75,.25,1.4) forwards;}
@@ -46,6 +46,7 @@
     .trigger1 #section2 #usp1 {animation: 0.5s appear forwards;}
     .trigger1 #section2 #usp2 {animation: 0.5s appear 0.25s forwards;}
     .trigger1 #section2 #usp3 {animation: 0.5s appear 0.5s forwards;}
+    .trigger1 #section2 #usp4 {animation: 0.5s appear 0.75s forwards;}
     @keyframes appear {to {opacity: 1;}}
 
     /* Section 3 - Screenshot */
@@ -121,7 +122,7 @@
           <div class="divider"></div>
           <br>
           <div class="col s6">
-            <a class="waves-effect waves-light btn-large white black-text" href="#customization"><i class="material-icons right small">keyboard_arrow_down</i>Find out more . . .</a>
+            <a class="waves-effect waves-light btn-large white black-text" href="#section2"><i class="material-icons right small">keyboard_arrow_down</i>Find out more . . .</a>
           </div>
           <div class="col s6">
             <a class="waves-effect waves-light btn-large orange" href="signup.html"><i class="material-icons right">keyboard_arrow_right</i>Sign up</a>
@@ -133,18 +134,18 @@
 
   <div id="section2" class="section scrollspy">
     <div class="container row">
-      <div id="usp1" class="usp col s12 m4">
+      <div id="usp1" class="usp col s12 m6">
         <div class="row">
           <div class="col s6 m12 center-align">
-            <img class="responsive-img" src="mfa.png" alt="bad person">
+            <img class="responsive-img" src="lost-device.png" alt="puppet">
           </div>
           <div class="col s6 m12">
-            <h4>Frictionless MFA</h4>
-            <p>Let <em>Account Shield</em> silently add muti-factor authentication (MFA) to your user accounts. By comparing characteristics of the user's device and connection, <em>Account Shield</em> provides an additional layer of security without the user needing to do anything extra.</p>
+            <h4>Invalidate lost devices</h4>
+            <p>No need to sweat when one of your users loses their device and it has their login credentials saved on it - <em>Account Shield</em> lets them or you repudiate that device so that it can no longer access that account.</p>
           </div>
         </div>
       </div>
-      <div id="usp2" class="usp col s12 m4">
+      <div id="usp2" class="usp col s12 m6">
         <div class="row">
           <div class="col s6 m12 center-align">
             <img class="responsive-img" src="person-bad.png" alt="bad person">
@@ -155,7 +156,18 @@
           </div>
         </div>
       </div>
-      <div id="usp3" class="usp col s12 m4">
+      <div id="usp3" class="usp col s12 m6">
+        <div class="row">
+          <div class="col s6 m12 center-align">
+            <img class="responsive-img" src="mfa.png" alt="bad person">
+          </div>
+          <div class="col s6 m12">
+            <h4>Frictionless MFA</h4>
+            <p>Let <em>Account Shield</em> silently add muti-factor authentication (MFA) to your user accounts. By comparing characteristics of the user's device and connection, <em>Account Shield</em> provides an additional layer of security without the user needing to do anything extra.</p>
+          </div>
+        </div>
+      </div>
+      <div id="usp4" class="usp col s12 m6">
         <div class="row">
           <div class="col s6 m12 center-align">
             <img class="responsive-img" src="puppet.png" alt="puppet">
