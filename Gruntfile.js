@@ -1,7 +1,10 @@
 module.exports = function(grunt) {
 
   var merge = require("merge");
-  require('dotenv').load({silent: true});
+
+  var target = grunt.option('target') || 'dev';
+
+  require('dotenv').load({silent: true, path: target + ".env"});
 
   var includes = ["**/*", "!**/_*.html"];
 
@@ -88,7 +91,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           region: 'eu-west-1',
-          bucket: 'account-shield-retail-website-deployment-test',
+          bucket: process.env.AWS_BUCKET,
           differential: true,
           displayChangesOnly: true,
           params: {
