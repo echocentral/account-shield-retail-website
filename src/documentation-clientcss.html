@@ -1,0 +1,66 @@
+          <div class="row">
+            <div class="col m6">
+              <p>Go beyond normal responsive design, to present content or preselect options depending upon device factors such as platform (e.g. Windows, Linux, etc...), browser or device type (e.g. Laptop, Desktop, etc...).</p>
+              <p><em>Account Shield</em> provides a simple class expression format which allows for showing/hiding content based upon </p>
+            </div>
+            <div class="col m6 orange lighten-5">
+              <h5>Setup</h5>
+              <p>Using Client-side CSS is simple as 1, 2, 3.</p>
+              <ol>
+                <li>Switch on the option in the Dashboard</li>
+                <li>Inlcude the CSS and JS files in your document</li>
+                <li>Use the special @ commands in your markup as shown below</li>
+              </ol>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <h5>How it works</h5>
+              <p>Use <em>Account Shield</em>'s special @ commands in your class strings. See the <a href="#section5">Properties Reference</a> for a full list of properties which can be used with these commands</p>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-at" class="command col s4 scrollspy">@(<span class="light">PROPERTY</span>)</div>
+            <div class="col s8">
+              Inserts content of PROPERTY into element
+              <code>&lt;span class="<b>@(device-platform)</b>"&gt;&lt;span&gt;</code> would produce markup like <kbd>&lt;span&gt;Windows&lt;span&gt;</kbd>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-if" class="command col s4 scrollspy">@if(<span class="light">PROPERTY</span>,<span class="light">CLASS</span>)</div>
+            <div class="col s8">
+              Enables CLASS if PROPERTY is true
+              <code>&lt;span class="<b>@if(device-platform-linux,penguin)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code> would produce markup like <kbd>&lt;span class="penguin"&gt;Lorum ipsum . . .&lt;span&gt;</kbd>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-show" class="command col s4 scrollspy">@show-if(<span class="light">PROPERTY</span>) /<br>@visible-if(<span class="light">PROPERTY</span>)</div>
+            <div class="col s8">
+              Shows content of element if PROPERTY is true
+              <code>&lt;span class="<b>@show-if(device-platform-windows)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code>
+              (@show accomplishes this using display:none/block, @visible using visibility:hidden/visible - the difference being that @visible reserves the space on the page for the content whether showing or not, @show will collapse the space on the page when not showing)
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div id="css-hide" class="command col s4 scrollspy">@hide-if(<span class="light">PROPERTY</span>) /<br>@invisible-if(<span class="light">PROPERTY</span>)</div>
+            <div class="col s8">
+              Hides content of element if PROPERTY is true
+              <code>&lt;span class="<b>@hide-if(device-platform-windows)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code>
+              (the difference between @hide and @invisible follows that for @show/@visible above)
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row">
+            <div class="col s8 offset-s4">
+              <p>
+                <i class="material-icons small orange-text">warning</i> Take care not to use any spaces within your @ commands.
+              </p>
+              <p>
+                You can, however, combine @ commands with other class names, for example: <kbd>&lt;span class="foo @hide-if(device-platform-windows) bar"&gt;</kbd>
+              </p>
+            </div>
+          </div>

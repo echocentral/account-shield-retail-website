@@ -3,6 +3,7 @@
 <head>
   <title>Account Shield - Documentation</title>
   {% include "_head.html" %}
+  <meta name="description" content="ACCOUNT SHIELD - Documentation">
 
   <style>
     body {font-weight: 300; font-size: 16px;}
@@ -62,6 +63,7 @@
         <li><a href="#section1">Getting Started</a></li>
         <li class="secondary"><a href="#gs-signup">Signing up</a></li>
         <li class="secondary"><a href="#gs-further">Going further</a></li>
+        <li><a href="#section1a">Using the Dashboard</a></li>
         <li><a href="#section2">Client-side CSS</a></li>
         <li class="secondary"><a href="#css-at">@</a></li>
         <li class="secondary"><a href="#css-if">@if</a></li>
@@ -92,19 +94,21 @@
               <h4></h4>
             </div>
           </div>
-          <div id="gs-signup" class="row scrollspy">
+          <div class="content"></div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+    
+      <div id="section1a" class="section scrollspy">
+        <div class="container">
+          <div class="row">
             <div class="col s12">
-              <h5>Signing up</h5>
-              <p>To start using <em>Account Shield</em> you need to have an account with the service (if you haven't done so already, you can sign up <a href="signup.html">here</a>). This provides access to a Dashboard. Go to the 'Settings' area of the Dashboard, and follow the instructions there to register your web site and get it set up to work with <em>Account Shield</em>.</p>
-              <p>When you have successfully completed these simple steps, you will have basic functionality enabled. Sessions will now begin to be logged and available for analysis in your Dashboard, and you are ready to go further.</p>
+              <h2>Using the Dashboard</h2>
+              <h4></h4>
             </div>
           </div>
-          <div id="gs-further" class="row scrollspy">
-            <div class="col s12">
-              <h5>Going further</h5>
-              <h5 class="light-blue-text">You need to be signed up to see this information</h5>
-            </div>
-          </div>
+          <div class="content"></div>
         </div>
       </div>
 
@@ -118,72 +122,7 @@
               <h4>Simple client-side sensing using CSS</h4>
             </div>
           </div>
-          <div class="row">
-            <div class="col m6">
-              <p>Go beyond normal responsive design, to present content or preselect options depending upon device factors such as platform (e.g. Windows, Linux, etc...), browser or device type (e.g. Laptop, Desktop, etc...).</p>
-              <p><em>Account Shield</em> provides a simple class expression format which allows for showing/hiding content based upon </p>
-            </div>
-            <div class="col m6 orange lighten-5">
-              <h5>Setup</h5>
-              <p>Using Client-side CSS is simple as 1, 2, 3.</p>
-              <ol>
-                <li>Switch on the option in the Dashboard</li>
-                <li>Inlcude the CSS and JS files in your document</li>
-                <li>Use the special @ commands in your markup as shown below</li>
-              </ol>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-              <h5>How it works</h5>
-              <p>Use <em>Account Shield</em>'s special @ commands in your class strings. See the <a href="#section5">Properties Reference</a> for a full list of properties which can be used with these commands</p>
-            </div>
-          </div>
-          <div class="divider"></div>
-          <div class="row">
-            <div id="css-at" class="command col s4 scrollspy">@(<span class="light">PROPERTY</span>)</div>
-            <div class="col s8">
-              Inserts content of PROPERTY into element
-              <code>&lt;span class="<b>@(device-platform)</b>"&gt;&lt;span&gt;</code> would produce markup like <kbd>&lt;span&gt;Windows&lt;span&gt;</kbd>
-            </div>
-          </div>
-          <div class="divider"></div>
-          <div class="row">
-            <div id="css-if" class="command col s4 scrollspy">@if(<span class="light">PROPERTY</span>,<span class="light">CLASS</span>)</div>
-            <div class="col s8">
-              Enables CLASS if PROPERTY is true
-              <code>&lt;span class="<b>@if(device-platform-linux,penguin)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code> would produce markup like <kbd>&lt;span class="penguin"&gt;Lorum ipsum . . .&lt;span&gt;</kbd>
-            </div>
-          </div>
-          <div class="divider"></div>
-          <div class="row">
-            <div id="css-show" class="command col s4 scrollspy">@show-if(<span class="light">PROPERTY</span>) /<br>@visible-if(<span class="light">PROPERTY</span>)</div>
-            <div class="col s8">
-              Shows content of element if PROPERTY is true
-              <code>&lt;span class="<b>@show-if(device-platform-windows)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code>
-              (@show accomplishes this using display:none/block, @visible using visibility:hidden/visible - the difference being that @visible reserves the space on the page for the content whether showing or not, @show will collapse the space on the page when not showing)
-            </div>
-          </div>
-          <div class="divider"></div>
-          <div class="row">
-            <div id="css-hide" class="command col s4 scrollspy">@hide-if(<span class="light">PROPERTY</span>) /<br>@invisible-if(<span class="light">PROPERTY</span>)</div>
-            <div class="col s8">
-              Hides content of element if PROPERTY is true
-              <code>&lt;span class="<b>@hide-if(device-platform-windows)</b>"&gt;Lorum ipsum . . .&lt;span&gt;</code>
-              (the difference between @hide and @invisible follows that for @show/@visible above)
-            </div>
-          </div>
-          <div class="divider"></div>
-          <div class="row">
-            <div class="col s8 offset-s4">
-              <p>
-                <i class="material-icons small orange-text">warning</i> Take care not to use any spaces within your @ commands.
-              </p>
-              <p>
-                You can, however, combine @ commands with other class names, for example: <kbd>&lt;span class="foo @hide-if(device-platform-windows) bar"&gt;</kbd>
-              </p>
-            </div>
-          </div>
+          <div class="content"></div>
         </div>
       </div>
 
@@ -561,11 +500,26 @@
 
   <!--  Scripts-->
   {% include "_tail.html" %}
-  <script>
+  <script type="text/javascript">
+    function loadResponse(response, status, xhr) {
+      if (status == "error") {
+        $(this).html('<h5 class="light-blue-text">You need to be signed up to see this information</h5>');
+      }
+    }
+  </script>
+  <script type="text/javascript">
     (function($){
       $(function(){
         $('.button-collapse').sideNav();
         $('.scrollspy').scrollSpy();
+
+        $("#section1 .content").load("documentation-getstarted.html", loadResponse)
+
+        var options = [
+          {selector: '#section1', offset: 100, callback: '$("#section1a .content").load("http://as-dashboard.echo-central.com/documentation-dashboard.html", loadResponse)'},
+          {selector: '#section1', offset: 1000, callback: '$("#section2 .content").load("documentation-clientcss.html", loadResponse)'}
+        ];
+        Materialize.scrollFire(options);
       });
     })(jQuery);
   </script>
