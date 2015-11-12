@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Echo Protect</title>
+  {% include "_head.html" %}
+
+  <style>
+    /* Basic tag overrides */
+    body {font-weight: 300; font-size: 16px;}
+    a {color: #ff9800;}
+    h1 {font-weight: 200;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #03a9f4;}
+    i.material-icons {opacity: 0;}
+    body.icons-loaded i.material-icons {animation: 0.5s appear 0.5s forwards;}
+
+    /* Top menu */
+    nav {background-color: rgba(50,50,50,0.85) !important;}
+
+    /* Side menu */
+    #sideMenu {position: fixed; top: 50%; transform: translateY(-50%); right: 20px; z-index: 99999;}
+    #sideMenu li a {width: 12px; height: 12px; border-radius: 50%; border: 2px solid #81d4fa; background: #FFF; display: block; margin: 10px 0; -webkit-transition: all 300ms ease; -moz-transition: all 300ms ease; -ms-transition: all 300ms ease; -o-transition: all 300ms ease; transition: all 300ms ease;}
+
+    /* Helper classes */
+    .section {margin-top: 10%;}
+    .btn-large i.large {font-size: 3rem; line-height: 1.33;}
+
+    /* Section 1 - Options */
+    #section1 {margin-top: -64px;}
+    #section1>.row {margin-bottom: 0;}
+    #section1 .option {padding: 0 2%; border-right: 2px solid rgba(0,0,0,0.15);}
+    #section1 .option:after {position: relative; display: block; bottom: -50px; content: ' '; width: 100px; height: 100px; -moz-transform: scale(1, 0.4) rotate(45deg); -ms-transform: scale(1, 0.4) rotate(45deg); -o-transform: scale(1, 0.4) rotate(45deg); -webkit-transform: scale(1, 0.4) rotate(45deg); transform: scale(1, 0.4) rotate(45deg); margin: auto; background-color: inherit; z-index: 1;}
+    #section1 .headings {height: 120px; margin-top: 100px; overflow: hidden;}
+    #section1 .icons {height: 100px; overflow: hidden;}
+    #section1 .text {height: 180px; overflow: hidden;}
+    #section1 .actions {height: 0;}
+    #section1 .btn {background-color: rgba(255,255,255,0.25);}
+
+    /* Section 2 - Headlines */
+    #section2 {margin-top: -100px; padding: 160px 0 80px; background-image: url('white-texture.png');}
+    #section2 .row {margin-bottom: 0;}
+    #section2 h1, #section2 h5 {margin-top: 0; text-shadow: 1px 1px 0 #fff;}
+
+    /* Section 3 - About us */
+    #section3 {display: none; opacity: 0; background-image: url('white-texture.png');}
+    .trigger #section3 {display: block; animation: 0.5s appear forwards;}
+    #section3 .divider {margin-bottom: 80px;}
+    #section3 form {margin-top: 3rem;}
+    #section3 .row:last-child {margin-bottom: 0; padding-bottom: 6rem;}
+    @keyframes appear {to {opacity: 1;}}}
+  </style>
+</head>
+<body>
+  {% include "_ep-navbar.html" with {option: 1} %}
+
+  <div id="section1" class="container">
+    <div class="row center white-text">
+      <div class="option col s6 m3 green">
+        <div class="headings">
+          <h2>Insight<br>Advantage</h2>
+        </div>
+        <div class="icons">
+          <i class="material-icons large">open_with</i>
+        </div>
+        <div class="text">
+          <p>Target application gaming and fraud by examining incoming business and comparing it to past submissions in real time</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="ep-insightadvantage.html">more<i class="material-icons right">chevron_right</i></a>
+        </div>
+      </div>
+      <div class="option col s6 m3 light-blue">
+        <div class="headings">
+          <h2>Account<br>Shield</h2>
+        </div>
+        <div class="icons">
+          <i class="material-icons large">verified_user</i>
+        </div>
+        <div class="text">
+          <p>Secure your customers against account takeover and alert your business to fraud rings operating multiple accounts</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="ep-accountshield.html">more<i class="material-icons right">chevron_right</i></a>
+        </div>
+      </div>
+      <div class="option col s6 m3 orange">
+        <div class="headings">
+          <h2>Echo<br>Reflect</h2>
+        </div>
+        <div class="icons">
+          <i class="material-icons large">select_all</i>
+        </div>
+        <div class="text">
+          <p>Capture screen recordings of your web visitors - every scroll, mouse move, click and page change</p>
+        </div>
+        <div class="actions">
+          <a class="btn" href="ep-echoreflect.html">more<i class="material-icons right">chevron_right</i></a>
+        </div>
+      </div>
+      <div class="option col s6 m3 grey darken-2">
+        <div class="headings">
+          <h2>About<br>Us</h2>
+        </div>
+        <div class="icons">
+          <i class="material-icons large">location_city</i>
+        </div>
+        <div class="text">
+          <p>Want to know more? Find out a little about us, and drop us a line</p>
+        </div>
+        <div class="actions">
+          <a id="about-us-btn" class="btn" href="#section3" onclick="$('body').addClass('trigger')">more<i class="material-icons right">expand_more</i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section2" class="grey lighten-2 center">
+    <div class="container row">
+      <div class="col s12 grey-text text-darken-3">
+        <h5>Next Generation</h5>
+        <h1>FRAUD DETECTION AND PREVENTION</h1>
+        <p><b>Echo Protect</b> partners with businesses who trade on the Internet, helping them to protect their profitability, their reputation, and their valued customers.<br>
+        From our technology building blocks - some of which are listed above - we create tailored solutions that go beyond the normal, and effectively get to the heart of our clients needs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="section3" class="grey lighten-2">
+    <div class="container divider grey"></div>
+    <div class="container row">
+      <div class="col s12 grey-text text-darken-3">
+        <h2>About Us<i class="material-icons large right grey-text text-lighten-3">location_city</i></h2>
+        <p><b>Echo Protect</b> was founded in 2015, by a team with extensive experience in financial services technology. We bring a new approach to securing your Internet business.</p>
+        <p>We have a unique mix of developers, number crunchers and client service folk.</p>
+        <p>Our developers have a long history of taking the latest backroom advances in technology and applying them to real business problems.  Our aim is always to apply the state-of-the art solutions to our client's business challenges and so deliver a market beating advantage.</p>
+        <p>But the development does not stop there - it is on-going.  Our Advanced Analysis team examines the performance of the solution in conjunction with your business data and offers updates and revisions to ensure that our solutions keep pace with your ever-changing challenges and threats.</p>
+        <p>Finally, our client servicing team ensures that working with us is a dream and that each solution is tailored perfectly to your unique business environment.</p>
+      </div>
+    </div>
+    <div class="row container">
+      <form class="col s12 m8 offset-m2 z-depth-2 grey-text text-darken-3 active-white">
+        <h4 class="center">Get in touch</h4>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input id="email" type="email" class="validate">
+            <label for="email">Email address</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Message</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 right-align">
+            <button class="btn waves-effect waves-light orange" type="submit" name="action">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {% include "_ep-footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $('.button-collapse').sideNav();
+        //$('.scrollspy').scrollSpy();
+
+        if (window.location.hash == "#about-us") setTimeout(function(){$('#about-us-btn').click()},100);
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>

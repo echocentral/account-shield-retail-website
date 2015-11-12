@@ -43,26 +43,26 @@
 
         regionStyle: {
             initial: {
-                fill: '#b2ebf2',
+                fill: '#eeeeee',
                 'fill-opacity': 1,
                 stroke: 'false',
                 'stroke-width': 0,
                 'stroke-opacity': 1
             },
             hover: {
-                fill: '#e0f7fa',
+                fill: '#f5f5f5',
                 'fill-opacity': 1,
                 cursor: 'pointer'
             },
             selected: {
-                fill: '#80deea'
+                fill: '#e0e0e0'
             },
             selectedHover: {}
         },
 
         markerStyle: {
             initial: {
-                fill: '#ff4081',
+                fill: '#ce93d8',
                 stroke: '#f8bbd0',
                 r: 6
             },
@@ -72,11 +72,11 @@
                 cursor: 'pointer'
             },
             selected: {
-                fill: '#f50057',
+                fill: '#ba68c8',
                 "stroke-width": 0,
             },
         },
-        backgroundColor: '#00bcd4',
+        backgroundColor: '#616161',
         markers: [{
             latLng: [-38.41, -63.61],
             name: 'Argentina',            

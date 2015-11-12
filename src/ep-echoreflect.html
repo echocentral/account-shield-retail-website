@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Echo Protect - Account Shield</title>
+  {% include "_head.html" %}
+
+  <style>
+    /* Basic tag overrides */
+    body {font-weight: 300; font-size: 16px;}
+    a {color: #ff9800;}
+    h1 {font-weight: 200;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #03a9f4;}
+    i.material-icons {opacity: 0;}
+    body.icons-loaded i.material-icons {animation: 0.5s appear 0.5s forwards;}
+
+    /* Top menu */
+    nav, nav li ul {background-color: #ff9800 !important;}
+
+    /* Side menu */
+    #sideMenu {position: fixed; top: 50%; transform: translateY(-50%); right: 20px; z-index: 99999;}
+    #sideMenu li a {width: 12px; height: 12px; border-radius: 50%; border: 2px solid #81d4fa; background: #FFF; display: block; margin: 10px 0; -webkit-transition: all 300ms ease; -moz-transition: all 300ms ease; -ms-transition: all 300ms ease; -o-transition: all 300ms ease; transition: all 300ms ease;}
+
+    /* Right scroll menu */
+    .table-of-contents li {padding: inherit;}
+    .table-of-contents a {display: initial; font-weight: inherit; color: inherit; padding-left: inherit; height: auto; line-height: normal; letter-spacing: normal;}
+    .table-of-contents a:hover {color: inherit; padding-left: inherit; border-left: none;}
+    .table-of-contents a.active {font-weight:inherit; padding-left: inherit; border-left: none; background-color: #ff9800 !important; border-color: #ff9800 !important;}
+
+    /* Helper classes */
+    .section {margin-top: 10%;}
+    .btn-large i.large {font-size: 3rem; line-height: 1.33;}
+
+    /* Section 1 - Top banner */
+    #section1 {min-height: 600px; background: url('ep-er-banner.png') no-repeat 70% center;}
+
+    /* Section 2 - USPs */
+    #section2 {margin-top: 7rem;}
+    #section2 .usp {opacity: 0;}
+    .trigger1 #section2 #usp1 {animation: 0.5s appear forwards;}
+    .trigger1 #section2 #usp2 {animation: 0.5s appear 0.25s forwards;}
+    .trigger1 #section2 #usp3 {animation: 0.5s appear 0.5s forwards;}
+    .trigger1 #section2 #usp4 {animation: 0.5s appear 0.75s forwards;}
+    @keyframes appear {to {opacity: 1;}}
+
+    /* Section 3 - Screenshot */
+    #section3 .switch {float: right; color: #616161; font-size: 60%; font-weight: 300;}
+    #section3 .switch label input[type=checkbox]:checked+.lever:after {background-color: #03a9f4;}
+    #section3 .switch label .lever:after {background-color: #ccc; border: 1px solid #fff; box-shadow: none;}
+    #section3 h5:not(:nth-child(1)) {margin-top: 3rem;}
+
+    /* Section 4 - Screenshot */
+    #section4 .screenshot {width: 100%;}
+
+    /* Section 5 - Properties */
+    #section5 .attributes .collapsible {border: none;}
+    #section5 .attributes .collapsible-header:after {content: '\25bc'; float: right; font-size: 80%; color: #ff9800;}
+    #section5 .attributes .collapsible-header.active:after {content: '\25b2';}
+    #section5 .attributes .collapsible-body>div{margin: 0.5em;}
+    #section5 .name {font-size: 90%; font-weight: bold; text-transform: uppercase;}
+    #section5 .name:after {content: '   -   ';}
+
+    /* Section 6 - Echo Reflect */
+
+    /* Section 7 - Privacy */
+    @media only screen and (min-width: 600px) {#section7 .container {background: url('snowden.png') no-repeat right bottom;}}
+  </style>
+</head>
+<body>
+  {% include "_ep-navbar.html" with {option: 2} %}
+
+  <ul id="sideMenu" class="table-of-contents">
+    <li class="tooltipped" data-position="left" data-tooltip="Top">
+      <a href="#section1"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="Benefits">
+      <a href="#section2"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="Quick, simple, cost-effective">
+      <a href="#section3"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="What it looks like">
+      <a href="#section4"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="More you can do">
+      <a href="#section5"></a>
+    </li>
+    <li class="tooltipped" data-position="left" data-tooltip="And even more">
+      <a href="#section6"></a>
+    </li>
+  </ul>
+
+  <div id="section1" class="scrollspy">
+    <div class="container">
+      <div class="row">
+        <div class="col s6 offset-s6 m4 offset-m8 center white-text">
+          <h1><br><i class="material-icons large">select_all</i> Echo Reflect</h1>
+          <h5>Track and record your customers</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section2" class="scrollspy">
+    <div class="container row center">
+      <h2>Web Session CCTV<br>See your website through your users' eyes</h2>
+      <!--iframe src="//www.youtube.com/embed/kwxS5Y7d-xs?wmode=opaque&amp;enablejsapi=1&amp;autoplay=0" height="480" width="854" scrolling="no" frameborder="0" allowfullscreen="" id="yui_3_17_2_1_1445444567744_141" style="opacity: 1;"><br></iframe-->
+    </div>
+    <div class="container row">
+      <div id="usp1" class="usp col s12 m3">
+        <div class="row">
+          <div class="col s12">
+            <h4>Raise quality</h4>
+            <p><em>Echo Reflect</em> lets you find the bugs that are impacting your users' experience - even those obscure ones that only show up on unusual devices - and lets you see the real sessions affected.</p>
+          </div>
+        </div>
+      </div>
+      <div id="usp2" class="usp col s12 m3">
+        <div class="row">
+          <div class="col s12">
+            <h4>Increase conversions</h4>
+            <p><em>Echo Reflect</em> reveals your customer journey as never before - first hand. Now you can see exactly how users interact with your site - not only where they stumble or drop out, but why.</p>
+          </div>
+        </div>
+      </div>
+      <div id="usp3" class="usp col s12 m3">
+        <div class="row">
+          <div class="col s12">
+            <h4>Help customers</h4>
+            <p>Frustrated customers ringing you up with problems? <em>Echo Reflect</em> lets you find and review their online experience and provide them with solid help.</p>
+          </div>
+        </div>
+      </div>
+      <div id="usp4" class="usp col s12 m3">
+        <div class="row">
+          <div class="col s12">
+            <h4>Arbitrate disputes</h4>
+            <p>And if you ever need to arbitrate a customer dispute, <em>Echo Reflect</em> provides a repository of evidence, showing exactly what the customer saw and did in their interactions with your site.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section3" class="section container scrollspy">
+      <div class="row">
+        <div class="col s12 center-align">
+          <h2>
+            <i class="material-icons large light-blue-text text-lighten-3">flash_on</i><br>
+            Quick setup &nbsp; &bull; &nbsp; Simple to use &nbsp; &bull; &nbsp; Cost-effective
+          </h2>
+          <h5><em>Account Shield</em> plays nice with your online system, whether you've built your own custom website, use a content management / shopping cart system, or license a third-party solution.</h5>
+          <br>
+        </div>
+        <div class="col s12 m6">
+          <h5><i class="material-icons">done</i> Quick setup</h5>
+          <p>It's simple to get started - we porovide a small code snippet to cut and paste on to your web pages. In minutes you can be up and running with basic functionality. Add a simple server-side call to <em>Account Shield</em> when users log in, and unlock the full power of the service.</p>
+          <h5><i class="material-icons">done</i> Simple to use - for you</h5>
+          <p>Configuration is through an easy-to-use web dashboard, which also gives you an instant handle on what's going on. See and explore users - where they're coming from, what they're doing - and be alerted to threats.</p>
+        </div>
+        <div class="col s12 m6">
+          <h5><i class="material-icons">done</i> Simple to use - for your users</h5>
+          <p><em>Account Shield</em> works the way your users have come to expect from their experience with sites like Google, Yahoo and Facebook. They can get a list of account activity, manage which devices they allow access to, and get alerted when someone tries to login from an unknown device.</p>
+          <h5><i class="material-icons">done</i> Cost-effective</h5>
+          <p><em>Account Shield</em> provides protection for your users and your business from just pence per user/per month. And there's no lock-in - cancel your subscription any time and your website simple reverts to working as before.</p>
+        </div>
+      </div>
+  </div>
+
+  <div id="section4" class="section scrollspy">
+    <div class="row">
+      <h2 class="container">
+        <i class="material-icons large light-blue-text text-lighten-3">folder_shared</i>
+        Even easier with our out-of-the-box end-user pages
+      </h2>
+      <div class="col s12 m6">
+        <img class="screenshot z-depth-2" src="as-2a.png">
+      </div>
+      <div class="col s12 m4">
+        <p>We provide the end-user pages you need to cover common use cases such as reviewing login history and managing devices - no need to write a line of code.</p>
+        <p>Need more control? Download all our pages, and other code examples, to create your own fully integrated solution, fast.</p>
+        <p>All our pages are fully responsive, follow the latest Material Design guidelines, and can be easily customized.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="section5" class="section container scrollspy">
+    <div class="row center">
+      <h2>And there's more</h2>
+      <h5 id="attributes" class="scrollspy"><em>Account Shield</em> gives you powerful capabilities to easily customize user content and journeys based on a wide range of characteristics:</h5>
+    </div>
+    <div class="attributes row">
+      <div class="col s6">
+        <ul class="collapsible z-depth-0">
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">perm_identity</i> User
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">User seen on site</span>
+                <span class="value">Boolean flag, to indicate whether that user has visited the site before.</span>
+              </div>
+              <div>
+                <span class="name">User seen on page</span>
+                <span class="value">Boolean flag, to indicate whether that user has visited the page before.</span>
+              </div>
+              <div>
+                <span class="name">User last seen</span>
+                <span class="value">Date when this user last accessed this site.</span>
+              </div>
+              <div>
+                <span class="name">User's devices</span>
+                <span class="value">Array of devices associated with the user.</span>
+              </div>
+              <div>
+                <span class="name">User's connections</span>
+                <span class="value">Array of connections associated with the user.</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">devices</i> Device
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">Device seen on site</span>
+                <span class="value">Boolean flag, to indicate whether that device has visited the site before.</span>
+              </div>
+              <div>
+                <span class="name">Device seen on page</span>
+                <span class="value">Boolean flag, to indicate whether that device has visited the page before.</span>
+              </div>
+              <div>
+                <span class="name">Device last seen</span>
+                <span class="value">Date when this device last accessed this site.</span>
+              </div>
+              <div>
+                <span class="name">Device type</span>
+                <span class="value">One of 'Mobile', 'Phablet', 'Tablet', 'Laptop' or 'Desktop'.</span>
+              </div>
+              <div>
+                <span class="name">Device metrics</span>
+                <span class="value">A host of properties describing the device, including: platform, browser, languages, screen dimensions, device orientation, etc.</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col s6">
+        <ul class="collapsible z-depth-0">
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">wifi_tethering</i> Connection
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">IP Address</span>
+                <span class="value">Text string, providing the public IP address used by the connection.</span>
+              </div>
+              <div>
+                <span class="name">Connection seen on site</span>
+                <span class="value">Boolean flag, to indicate whether that connection has been used to visit the site before.</span>
+              </div>
+              <div>
+                <span class="name">Connection seen on page</span>
+                <span class="value">Boolean flag, to indicate whether that connection has been used to visit the page before.</span>
+              </div>
+              <div>
+                <span class="name">Connection last seen</span>
+                <span class="value">Date when this connection was last used to access this site.</span>
+              </div>
+              <div>
+                <span class="name">Connection Type</span>
+                <span class="value">One of 'Fixed', or 'Mobile'.</span>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header transparent light-blue-text">
+              <i class="material-icons small">place</i> Location
+            </div>
+            <div class="collapsible-body">
+              <div>
+                <span class="name">Location co-ordinates</span>
+                <span class="value">Comma separated list of a latitude and longitude position of the city nearest to the location of the device.</span>
+              </div>
+              <div>
+                <span class="name">Country code</span>
+                <span class="value">A two character ISO code indicating the country where the device is located.</span>
+              </div>
+              <div>
+                <span class="name">Region</span>
+                <span class="value">A text string indicating the region of the country where the device is located.</span>
+              </div>
+              <div>
+                <span class="name">City</span>
+                <span class="value">A text string indicating the city nearest to the location of the device.</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="section6" class="section container scrollspy">
+    <div class="row">
+      <div class="col s12 center-align">
+        <h2>And even more!</h2>
+        <h5>Combine <em>Account Shield</em> with our innovative <a href="ep-echoreflect.html">Echo Reflect</a> capability, and have user sessions recorded</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m6">
+        <p>By adding the power of Echo Reflect, you can automatically record user sessions for later playback and analysis. See every scroll, mouse move, click, and page turn.  Easily gather a visual audit to help prosecute fraud and resolve disputes.
+        </p>
+      </div>
+      <div class="col s12 m6">
+        <img class="responsive-img z-depth-2" src="er-player-small-low.png" alt="Screen player">
+      </div>
+    </div>
+  </div>
+
+  {% include "_ep-footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $('.button-collapse').sideNav();
+        $('.scrollspy').scrollSpy();
+
+        var options = [
+          {selector: '#section1', offset: 1000, callback: '$("body").addClass("trigger1")'}
+        ];
+        Materialize.scrollFire(options);
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>

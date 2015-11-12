@@ -3,6 +3,7 @@
 <head>
   <title>Account Shield - Pricing</title>
   {% include "_head.html" %}
+  <meta name="description" content="ACCOUNT SHIELD - Account Protection pricing">
 
   <style>
     body {font-weight: 300; font-size: 16px;}
@@ -13,7 +14,10 @@
     .trigger1 nav li:last-child {background-color: #ffa726;}
     .btn-large i.large {font-size: 3rem; line-height: 1.33;}
     .bordered {border: 2px solid #ffe0b2;}
-    #section1, #section3, footer {margin-top: 8rem;}
+    #section1, footer {margin-top: 8rem;}
+
+    #section1 {background: url('free14.png') no-repeat right top;}
+    #section1 .spacer {height: 100px;}
 
     #section2 .switch {display: inline-block; width: 20rem; text-align: center; border: 4px solid transparent; transition: border-color 0.5s;}
     .prompt-show #section2 .switch {border-color: #81d4fa;}
@@ -41,9 +45,11 @@
   {% include "_navbar.html" with {option: 3} %}
 
   <div id="section1" class="section container center">
+    <div class="spacer hide-on-large-only"></div>
+    <div class="spacer hide-on-med-and-up"></div>
     <div class="row">
-      <h1>Sign up today</h1>
-      <h2>No hidden fees<br>No credit card required for small plan</h2>
+      <h1>Great Pricing</h1>
+      <h4>No hidden fees &bull; No credit card required to sign up</h4>
     </div>
   </div>
 
@@ -58,44 +64,99 @@
     <div class="row">
       <div class="col s12 m4 no-padding">
         <div class="col s12 orange lighten-2 white-text"><h2>Small</h2></div>
-        <div class="orange lighten-3 white-text"><span class="currency">$</span><span class="value">10</span><span class="suffix monthly">/mo</span><span class="suffix annual">/pa</span></div>
-        <div class="bordered standout">Cover <b>1</b> domain</div>
-        <div class="bordered standout">Protect upto <b>1,000</b> accounts</div>
-        <div class="bordered standout">Track devices & connections</div>
-        <div class="bordered">Client-side Markup and JS</div>
-        <div class="bordered">Standard support</div>
+        <div class="orange lighten-3 white-text"><span class="currency">$</span><span class="value">19</span><span class="suffix monthly">/mo</span><span class="suffix annual">/pa</span></div>
+        <div class="bordered standout">Covers up to <b>1,000</b> logins/month</div>
+        <div class="bordered standout">
+          Full base functionality
+          <ul class="light no-margin">
+            <li>Track devices &amp; connections</li>
+            <li>Account login history</li>
+            <li>Account device management</li>
+            <li>One-time-code challenges via email</li>
+            <li>Discovery tool</li>
+          </ul>
+          <br>
+          Full integration
+          <ul class="light no-margin">
+            <li>Client-side CSS</li>
+            <li>Client-side JS</li>
+            <li>Server-side REST</li>
+            <li>Hosted individual account pages</li>
+            <li>Downloadable page templates</li>
+          </ul>
+        </div>
+        <div class="bordered standout orange lighten-5">Email support</div>
         <a class="waves-effect waves-light btn orange"><i class="material-icons left">shopping_cart</i>Sign Up</a>
       </div>
       <div class="col s12 m4 no-padding">
         <div class="col s12 orange lighten-1 white-text"><h2>Medium</h2></div>
-        <div class="orange lighten-2 white-text"><span class="currency">$</span><span class="value monthly">89</span><span class="value annual">890</span><span class="suffix monthly">/mo</span><span class="suffix annual">/pa</span></div>
-        <div class="bordered standout">Cover upto <b>3</b> domain</div>
-        <div class="bordered standout">Protect upto <b>10,000</b> accounts</div>
-        <div class="bordered standout">Track users</div>
-        <div class="bordered standout">Track devices & connections</div>
-        <div class="bordered">Server-side REST</div>
-        <div class="bordered">Client-side Markup and JS</div>
-        <div class="bordered">Enhanced support</div>
+        <div class="orange lighten-2 white-text"><span class="currency">$</span><span class="value monthly">95</span><span class="value annual">890</span><span class="suffix monthly">/mo</span><span class="suffix annual">/pa</span></div>
+        <div class="bordered standout">Covers up to <b>10,000</b> logins/month</div>
+        <div class="bordered standout">
+          Full base functionality
+          <ul class="light no-margin">
+            <li>Track devices &amp; connections</li>
+            <li>Account login history</li>
+            <li>Account device management</li>
+            <li>One-time-code challenges via email</li>
+            <li>Discovery tool</li>
+          </ul>
+          <br>
+          Full integration
+          <ul class="light no-margin">
+            <li>Client-side CSS</li>
+            <li>Client-side JS</li>
+            <li>Server-side REST</li>
+            <li>Hosted individual account pages</li>
+            <li>Downloadable page templates</li>
+          </ul>
+        </div>
+        <div class="bordered standout">
+          Enhanced functionality
+          <ul class="light no-margin">
+            <li>One-time-code challenges via text message</li>
+          </ul>
+        </div>
+        <div class="bordered standout orange lighten-5">Email &amp; chat support</div>
         <a class="waves-effect waves-light btn orange"><i class="material-icons left">shopping_cart</i>Sign Up</a>
       </div>
       <div class="col s12 m4 no-padding">
         <div class="col s12 orange lighten-2 white-text"><h2>Large</h2></div>
-        <div class="orange lighten-3 white-text"><span class="currency">$</span><span class="value monthly">790</span><span class="value annual">7,900</span><span class="suffix monthly">/mo</span><span class="suffix annual">/pa</span></div>
-        <div class="bordered standout">Cover upto <b>10</b> domain</div>
-        <div class="bordered standout">Protect upto <b>100,000</b> accounts</div>
-        <div class="bordered standout">Track users</div>
-        <div class="bordered standout">Track devices & connections</div>
-        <div class="bordered">Server-side REST</div>
-        <div class="bordered">Client-side Markup and JS</div>
-        <div class="bordered">Enhanced discovery</div>
-        <div class="bordered">Downloadable templates</div>
-        <div class="bordered">Premium support</div>
+        <div class="orange lighten-3 white-text"><span class="currency">$</span><span class="value monthly">475</span><span class="value annual">7,900</span><span class="suffix monthly">/mo</span><span class="suffix annual">/pa</span></div>
+        <div class="bordered standout">Covers up to <b>100,000</b> logins/month</div>
+        <div class="bordered standout">
+          Full base functionality
+          <ul class="light no-margin">
+            <li>Track devices &amp; connections</li>
+            <li>Account login history</li>
+            <li>Account device management</li>
+            <li>One-time-code challenges via email</li>
+            <li>Discovery tool</li>
+          </ul>
+          <br>
+          Full integration
+          <ul class="light no-margin">
+            <li>Client-side CSS</li>
+            <li>Client-side JS</li>
+            <li>Server-side REST</li>
+            <li>Hosted individual account pages</li>
+            <li>Downloadable page templates</li>
+          </ul>
+        </div>
+        <div class="bordered standout">
+          Enhanced functionality
+          <ul class="light no-margin">
+            <li>One-time-code challenges via text message</li>
+            <li>Automated alerting</li>
+          </ul>
+        </div>
+        <div class="bordered standout orange lighten-5">Email, chat &amp; phone support</div>
         <a class="waves-effect waves-light btn orange"><i class="material-icons left">shopping_cart</i>Sign Up</a>
       </div>
     </div>
   </div>
 
-  <div id="section3" class="section container">
+  <div id="section3" class="section container center">
     <p>Need more? <em>Account Shield</em> is capable of supporting the largest and most demanding of enterprise applications. Just <a href="#">contact us</a> to begin a discussion.</p>
   </div>
 

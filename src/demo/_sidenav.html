@@ -5,7 +5,19 @@
                     #slide-out .divider {margin: 7rem 0 0;}
                 </style>
                 <ul id="slide-out" class="side-nav fixed leftside-navigation">
-                    <li class="bold {% if option == 1 %}active{% endif %}"><a href="index.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold"><a class="collapsible-header active waves-effect waves-cyan" href="index.html"><i class="mdi-action-dashboard"></i> Dashboard</a>
+                                <div class="collapsible-body">
+                                    <ul>     
+                                        <li><a href="#">Managed fund</a></li>
+                                        <li><a href="#">High growth fund</a></li>
+                                        <li><a href="#">Savings account</a></li>
+                                        <li><a href="#">Feeder account</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                     </li>
                     <li class="bold {% if option == 2 %}active{% endif %}"><a href="app-email.html" class="waves-effect waves-cyan"><i class="mdi-communication-email"></i> Mailbox <span class="new badge">4</span></a>
                     </li>
@@ -13,19 +25,19 @@
                     </li>
                     <li class="no-padding">
                         <ul class="collapsible collapsible-accordion">
-                            <li class="bold {% if option == 4 %}active{% endif %}"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-account-circle"></i> User</a>
+                            <li class="bold"><a class="collapsible-header {% if option == 4 %}active{% endif %} waves-effect waves-cyan"><i class="mdi-action-account-circle"></i> User</a>
                                 <div class="collapsible-body">
-                                    <ul>     
-                                        <li><a href="user-profile-page.html">User Profile</a></li>
-                                        <li><a href="user-security.html">User Security</a></li>
-                                        <li><a href="user-login.html">Logout</a></li>
+                                    <ul>
+                                        <li><a href="#">User Profile</a></li>
+                                        <li><a onclick="AS.showUserDashboard()">User Security</a></li>
+                                        <li><a href="logout">Logout</a></li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
                     </li>
                     <li class="li-hover"><div class="divider"></div></li>
-                    <li class="li-hover"><p class="ultra-small margin more-text">Daily Sales</p></li>
+                    <li class="li-hover"><p class="ultra-small margin more-text">Overall movement</p></li>
                     <li class="li-hover">
                         <div class="row">
                             <div class="col s12 m12 l12">

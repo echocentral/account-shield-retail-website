@@ -1,0 +1,43 @@
+<div class="navbar-fixed">
+	<style type="text/css" scoped>
+    	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {height: 64px !important; line-height: 64px !important;}
+		.nav-wrapper a, .nav-wrapper img {height: inherit;}
+		.nav-wrapper .brand-logo {padding: 10px 0;}
+		.nav-wrapper .brand-logo i {display: inline-block; font-size: 3rem;}
+		.nav-wrapper .brand-logo sup {font-weight: 200;}
+		nav .button-collapse i {font-size: 2rem;}
+		nav li ul {display: none;}
+		nav li:hover ul {display: block;}
+		nav li li {width: 100%; background-color: inherit; opacity: 0.8;}
+		nav li li:hover {opacity: 1;}
+	</style>
+	<ul id="dropdown1" class="dropdown-content">
+		<li><a href="ep-insightadvantage.html">Insight Advantage</a></li>
+		<li><a href="ep-accountshield.html">Acount Shield</a></li>
+		<li><a href="ep-echoreflect.html">Echo Reflect</a></li>
+	</ul>
+	<nav role="navigation">
+		<div class="nav-wrapper container">
+			<a href="ep-index.html" class="brand-logo">
+				<img class="responsive-img" src="ep-logo-white-large.png" alt="logo">
+			</a>
+			<ul class="right hide-on-med-and-down">
+				<li {% if option == 1 %} class="active"{% endif %}><a href="ep-index.html">Home</a></li>
+				<li {% if option == 2 %} class="active"{% endif %} style="width: 10rem;"><a class="dropdown-button" href="#" data-activates="dropdown1">Products<i class="material-icons right">arrow_drop_down</i></a>
+					<ul>
+						<li class="truncate"><a href="ep-insightadvantage.html">Insight Advantage</a></li>
+						<li class="truncate"><a href="ep-accountshield.html">Acount Shield</a></li>
+						<li class="truncate"><a href="ep-echoreflect.html">Echo Reflect</a></li>
+					</ul>
+				</li>
+				<li {% if option == 3 %} class="active"{% endif %}><a href="ep-index.html#about-us">About Us</a></li>
+			</ul>
+			<ul id="nav-mobile" class="side-nav">
+				<li {% if option == 1 %} class="active"{% endif %}><a href="ep-index.html">Home</a></li>
+				<li {% if option == 2 %} class="active"{% endif %}><a class="dropdown-button" href="#" data-activates="dropdown1">Products<i class="material-icons right">arrow_drop_down</i></a></li>
+				<li {% if option == 3 %} class="active"{% endif %}><a href="ep-index.html#about-us">About Us</a></li>
+			</ul>
+			<a href="#" class="button-collapse hide-on-large-only" data-activates="nav-mobile"><i class="material-icons small">menu</i></a>
+		</div>
+	</nav>
+</div>

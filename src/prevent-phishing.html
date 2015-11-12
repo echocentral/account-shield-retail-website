@@ -28,39 +28,12 @@
     .table-of-contents a.active {font-weight:inherit; padding-left: inherit; border-left: none; background-color: #ff9800 !important; border-color: #ff9800 !important;}
 
     /* Helper classes */
-    .section {margin-top: 10%;}
+    .section {margin-top: 8%;}
     .btn-large i.large {font-size: 3rem; line-height: 1.33;}
 
-    /* Section 1 - Top banner */
-    #section1 .banner-image {position: relative; height: 400px;}
-    @media only screen and (max-width: 1500px) {#section1 .banner-image {-moz-transform: scale(0.75); -ms-transform: scale(0.75); -o-transform: scale(0.75); -webkit-transform: scale(0.75); transform: scale(0.75);}}
-    #section1 #banner-image-holder {position: absolute; width: 100%; height: 400px; background: url('phishing.png') no-repeat center top;}
+    /* Section 1*/
+    z#section1 .heading {background: url('phishing2.png') no-repeat right;}
 
-    #section2a em {color: inherit;}
-    #section2a .row {margin-bottom: 0;}
-    #section2a i {opacity: 0.5;}
-
-    /* Section 3 - Screenshot */
-    #section3 .switch {float: right; color: #616161; font-size: 60%; font-weight: 300;}
-    #section3 .switch label input[type=checkbox]:checked+.lever:after {background-color: #03a9f4;}
-    #section3 .switch label .lever:after {background-color: #ccc; border: 1px solid #fff; box-shadow: none;}
-    #section3 h5:not(:nth-child(1)) {margin-top: 3rem;}
-
-    /* Section 4 - Screenshot */
-    #section4 .screenshot {width: 100%;}
-
-    /* Section 5 - Properties */
-    #section5 .attributes .collapsible {border: none;}
-    #section5 .attributes .collapsible-header:after {content: '\25bc'; float: right; font-size: 80%; color: #ff9800;}
-    #section5 .attributes .collapsible-header.active:after {content: '\25b2';}
-    #section5 .attributes .collapsible-body>div{margin: 0.5em;}
-    #section5 .name {font-size: 90%; font-weight: bold; text-transform: uppercase;}
-    #section5 .name:after {content: '   -   ';}
-
-    /* Section 6 - Echo Reflect */
-
-    /* Section 7 - Privacy */
-    @media only screen and (min-width: 600px) {#section7 .container {background: url('snowden.png') no-repeat right bottom;}}
   </style>
 </head>
 <body>
@@ -68,243 +41,25 @@
 
   <div id="section1" class="section scrollspy">
     <div class="container">
-      <div class="row">
-        <div class="banner-image col s12 m12 l6 center-align">
-          <div id="banner-image-holder">
-          </div>
-        </div>
-        <div class="col s12 m12 l6 center">
+      <div class="row heading">
+        <div class="col s7 m9">
           <h1>How to prevent phishing?</h1>
           <h5>Account Shield - the simple and effective way to protect your customer accounts</h5>
           <br>
-          <div class="divider"></div>
           <br>
-          <div class="col s6">
-            <a class="waves-effect waves-light btn-large white black-text" href="index.html"><i class="material-icons right small">keyboard_arrow_down</i>Find out more . . .</a>
-          </div>
-          <div class="col s6">
-            <a class="waves-effect waves-light btn-large orange" href="signup.html"><i class="material-icons right">keyboard_arrow_right</i>Sign up</a>
-          </div>
+          <p>Phishing and other such scams are the plague of modern online life. Fraudsters have no qualms about trapping the unwary - however elderly or impaired - into handing over their login credentials.</p>
+          <p><em>Account Shield</em> protects your customers by silently adding an additional layer of device recognition to your website. Now, even with the correct login details, fraudsters won't get in - <em>Account Shiekd</em> will block access <b>and</b> alert you and the account holder.</p>
+        </div>
+        <div class="col s5 m3">
+          <img class="responsive-img" src="phishing2.png" alt="fishing for login credentials">
         </div>
       </div>
-    </div>
-  </div>
-
-  <div id="section2a" class="section scrollspy light-blue lighten-5 light-blue-text text-darken-4">
-    <div class="container">
+      <div class="divider"></div>
       <div class="row">
-        <div class="col s12 m3 center-align">
-          <img class="responsive-img" src="mfa.png" alt="login protection">
+        <div class="col s12 center">
+          <br>
+          <a class="waves-effect waves-light btn-large orange white-text" href="index.html"><i class="material-icons right small">keyboard_arrow_right</i>Find out more . . .</a>
         </div>
-        <div class="col s12 m9">
-          <h2>How it works</h2>
-          <p></p> 
-          <p><em>Account Shield</em> makes the latest device and connection recognition technology available as a simple web service you add to your site. It silently adds muti-factor authentication (MFA) to your user accounts - using the characteristics of your user's device and connection, to provide an additional layer of security.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 center-align">
-          <h5>Your users get:</h5>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s4 center-align">
-          <p><i class="material-icons large">access_time</i><br><b>A history of their logins</b> - so that they can spot anything suspicious</p>
-        </div>
-        <div class="col s4 center-align">
-          <p><i class="material-icons large">devices</i><br><b>To see and manage their devices</b> - so that they can decide which should be allowed to access their account</p>
-        </div>
-        <div class="col s4 center-align">
-          <p><i class="material-icons large">settings_ethernet</i><br><b>Sent a One-Time-Code when a new device tries to access their account</b> - so that hackers and scammers are kept out</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 center-align">
-          <p>Check out our <a href="showcase.html">Showcase</a> to see how it might look on your website.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="section3" class="section container scrollspy">
-    <div class="row">
-      <div class="col s12 center-align">
-        <h2>
-          <i class="material-icons large light-blue-text text-lighten-3">flash_on</i><br>
-          Quick setup &nbsp; &bull; &nbsp; Simple to use &nbsp; &bull; &nbsp; Cost-effective
-        </h2>
-        <h5><em>Account Shield</em> plays nice with your online system, whether you've built your own custom website, use a content management / shopping cart system, or license a third-party solution.</h5>
-        <br>
-      </div>
-      <div class="col s12 m6">
-        <h5><i class="material-icons">done</i> Quick setup</h5>
-        <p>It's simple to get started - <a href="signup.html">sign up</a> and you get a small code snippet to cut and paste on to your web pages. In minutes you can be up and running with basic functionality. Add a simple server-side call to <em>Account Shield</em> when users log in, and unlock the full power of the service.</p>
-        <!--p>Full <a href="documentation.html">documentation and code examples</a> are available to get you up and running. We are even working to provide plug-ins that will do the work for you, for popular CMS and shopping cart systems like Wordpress, Joomla, and Magneto.</p-->
-        <h5><i class="material-icons">done</i> Simple to use - for you</h5>
-        <p>Configuration is through an easy-to-use web dashboard, which also gives you an instant handle on what's going on. See and explore users - where they're coming from, what they're doing - and be alerted to threats.</p>
-      </div>
-      <div class="col s12 m6">
-        <h5><i class="material-icons">done</i> Simple to use - for your users</h5>
-        <p><em>Account Shield</em> works the way your users have come to expect from their experience with sites like Google, Yahoo and Facebook. They can get a list of account activity, manage which devices they allow access to, and get alerted when someone tries to login from an unknown device. Check out the <a href="showcase.html">Showcase</a> for pictures of these screens and a full interactive demo.</p>
-        <h5><i class="material-icons">done</i> Cost-effective</h5>
-        <p><em>Account Shield</em> makes effective device identification affordable for every business. And there's no lock-in - cancel your subscription any time and your website simple reverts to working as before. See <a href="pricing.html">Pricing</a> for full details.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="section4" class="section scrollspy">
-    <div class="row">
-      <h2 class="container">
-        <i class="material-icons large light-blue-text text-lighten-3">folder_shared</i>
-        Even easier with our out-of-the-box end-user pages
-      </h2>
-      <div class="col s12 m6">
-        <img class="screenshot z-depth-2" src="as-2a.png">
-      </div>
-      <div class="col s12 m4">
-        <p>We provide the end-user pages you need to cover common use cases such as reviewing login history and managing devices - no need to write a line of code.</p>
-        <p>Need more control? Download all our pages, and other code examples, to create your own fully integrated solution, fast.</p>
-        <p>All our pages are fully responsive, follow the latest Material Design guidelines, and can be easily customized.</p>
-      </div>
-    </div>
-  </div>
-
-  <div id="section5" class="section container scrollspy">
-    <div class="row center">
-      <h2>And there's more</h2>
-      <h5 id="attributes" class="scrollspy"><em>Account Shield</em> gives you powerful capabilities to easily customize user content and journeys based on a wide range of characteristics:</h5>
-    </div>
-    <div class="attributes row">
-      <div class="col s6">
-        <ul class="collapsible z-depth-0">
-          <li>
-            <div class="collapsible-header transparent light-blue-text">
-              <i class="material-icons small">perm_identity</i> User
-            </div>
-            <div class="collapsible-body">
-              <div>
-                <span class="name">User seen on site</span>
-                <span class="value">Boolean flag, to indicate whether that user has visited the site before.</span>
-              </div>
-              <div>
-                <span class="name">User seen on page</span>
-                <span class="value">Boolean flag, to indicate whether that user has visited the page before.</span>
-              </div>
-              <div>
-                <span class="name">User last seen</span>
-                <span class="value">Date when this user last accessed this site.</span>
-              </div>
-              <div>
-                <span class="name">User's devices</span>
-                <span class="value">Array of devices associated with the user.</span>
-              </div>
-              <div>
-                <span class="name">User's connections</span>
-                <span class="value">Array of connections associated with the user.</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header transparent light-blue-text">
-              <i class="material-icons small">devices</i> Device
-            </div>
-            <div class="collapsible-body">
-              <div>
-                <span class="name">Device seen on site</span>
-                <span class="value">Boolean flag, to indicate whether that device has visited the site before.</span>
-              </div>
-              <div>
-                <span class="name">Device seen on page</span>
-                <span class="value">Boolean flag, to indicate whether that device has visited the page before.</span>
-              </div>
-              <div>
-                <span class="name">Device last seen</span>
-                <span class="value">Date when this device last accessed this site.</span>
-              </div>
-              <div>
-                <span class="name">Device type</span>
-                <span class="value">One of 'Mobile', 'Phablet', 'Tablet', 'Laptop' or 'Desktop'.</span>
-              </div>
-              <div>
-                <span class="name">Device metrics</span>
-                <span class="value">A host of properties describing the device, including: platform, browser, languages, screen dimensions, device orientation, etc.</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="col s6">
-        <ul class="collapsible z-depth-0">
-          <li>
-            <div class="collapsible-header transparent light-blue-text">
-              <i class="material-icons small">wifi_tethering</i> Connection
-            </div>
-            <div class="collapsible-body">
-              <div>
-                <span class="name">IP Address</span>
-                <span class="value">Text string, providing the public IP address used by the connection.</span>
-              </div>
-              <div>
-                <span class="name">Connection seen on site</span>
-                <span class="value">Boolean flag, to indicate whether that connection has been used to visit the site before.</span>
-              </div>
-              <div>
-                <span class="name">Connection seen on page</span>
-                <span class="value">Boolean flag, to indicate whether that connection has been used to visit the page before.</span>
-              </div>
-              <div>
-                <span class="name">Connection last seen</span>
-                <span class="value">Date when this connection was last used to access this site.</span>
-              </div>
-              <div>
-                <span class="name">Connection Type</span>
-                <span class="value">One of 'Fixed', or 'Mobile'.</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header transparent light-blue-text">
-              <i class="material-icons small">place</i> Location
-            </div>
-            <div class="collapsible-body">
-              <div>
-                <span class="name">Location co-ordinates</span>
-                <span class="value">Comma separated list of a latitude and longitude position of the city nearest to the location of the device.</span>
-              </div>
-              <div>
-                <span class="name">Country code</span>
-                <span class="value">A two character ISO code indicating the country where the device is located.</span>
-              </div>
-              <div>
-                <span class="name">Region</span>
-                <span class="value">A text string indicating the region of the country where the device is located.</span>
-              </div>
-              <div>
-                <span class="name">City</span>
-                <span class="value">A text string indicating the city nearest to the location of the device.</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="row center">See the <a href="documentation.html">Documentation</a> for all the good stuff that's available.</div>
-  </div>
-
-  <div id="section6" class="section container scrollspy">
-    <div class="row">
-      <div class="col s12 center-align">
-        <h2>And even more!</h2>
-        <h5>Combine <em>Account Shield</em> with our innovative <a href="http://www.echoreflect.com" target="er">Echo Reflect</a> capability, and have user sessions recorded</h5>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12 m6">
-        <p>By adding the power of Echo Reflect, you can automatically record user sessions for later playback and analysis. See every scroll, mouse move, click, and page turn.  Easily gather a visual audit to help prosecute fraud and resolve disputes.
-        </p>
-      </div>
-      <div class="col s12 m6">
-        <img class="responsive-img z-depth-2" src="er-player-small-low.png" alt="Screen player">
       </div>
     </div>
   </div>
@@ -318,11 +73,6 @@
       $(function(){
         $('.button-collapse').sideNav();
         $('.scrollspy').scrollSpy();
-
-        var options = [
-          {selector: '#section1', offset: 1000, callback: '$("body").addClass("trigger1")'}
-        ];
-        Materialize.scrollFire(options);
       });
     })(jQuery);
   </script>

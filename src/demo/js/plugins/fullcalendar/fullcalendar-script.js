@@ -25,13 +25,16 @@
 
     /* initialize the calendar
     -----------------------------------------------------------------*/
+    var today = new Date();
+    var todayDateString = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
+
     $('#calendar').fullCalendar({
       header: {
         left: 'prev,next today',
         center: 'title',
         right: 'month,basicWeek,basicDay'
       },
-      defaultDate: '2015-05-12',
+      defaultDate: todayDateString,
       editable: true,
       droppable: true, // this allows things to be dropped onto the calendar
       eventLimit: true, // allow "more" link when too many events
