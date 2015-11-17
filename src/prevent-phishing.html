@@ -28,7 +28,7 @@
     .table-of-contents a.active {font-weight:inherit; padding-left: inherit; border-left: none; background-color: #ff9800 !important; border-color: #ff9800 !important;}
 
     /* Helper classes */
-    .section {margin-top: 8%;}
+    #section1 {margin-top: 8%;}
     .btn-large i.large {font-size: 3rem; line-height: 1.33;}
 
     /* Section 1*/
@@ -39,7 +39,7 @@
 <body>
   {% include "_navbar.html" with {option: 1} %}
 
-  <div id="section1" class="section scrollspy">
+  <div id="section1" class="section">
     <div class="container">
       <div class="row heading">
         <div class="col s7 m9">
@@ -48,17 +48,52 @@
           <br>
           <br>
           <p>Phishing and other such scams are the plague of modern online life. Fraudsters have no qualms about trapping the unwary - however elderly or impaired - into handing over their login credentials.</p>
-          <p><em>Account Shield</em> protects your customers by silently adding an additional layer of device recognition to your website. Now, even with the correct login details, fraudsters won't get in - <em>Account Shiekd</em> will block access <b>and</b> alert you and the account holder.</p>
         </div>
         <div class="col s5 m3">
           <img class="responsive-img" src="phishing2.png" alt="fishing for login credentials">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section2" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5>There are measures you can take to protect your customers</h5>
+          <p>Measures such as . . .</p>
+          <div class="row">
+            <div class="col s12 m6"><i class="material-icons">school</i> <b>Education</b><br>
+              Explain how you will and won't communicate with them. Provide advice on how they can tell whether an email or website is genuine
+            </div>
+            <div class="col s12 m6"><i class="material-icons">device_hub</i> <b>Technical</b><br>
+              There are measures that can be taken to make it harder for scammers to steal or copy your website imagery. And ways to scan for domains which may have been setup with a similar name in order to deceive your customers. This is a specialist area - one where our sister company <a href="http://www.echoprotect.co.uk" target="echoprotect">Echo Protect</a> can help
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div id="section3" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5>However, no measures are completely effective<br>you must assume that some account credentials will always be compromised</h5>
+          <p>It is important to put in place protection in the event that scammers do obtain the credentials of your customers.</p>
+          <p><em>Account Shield</em> protects your customers by silently adding an additional layer of device recognition to your website. Now, even with the correct login details, fraudsters won't get in - <em>Account Shiekd</em> will block access <b>and</b> alert you and the account holder.</p>
         </div>
       </div>
       <div class="divider"></div>
       <div class="row">
         <div class="col s12 center">
           <br>
-          <a class="waves-effect waves-light btn-large orange white-text" href="index.html"><i class="material-icons right small">keyboard_arrow_right</i>Find out more . . .</a>
+          <div class="col s6">
+            <a class="waves-effect waves-light btn-large white black-text" href="index.html"><i class="material-icons right small">keyboard_arrow_down</i>Find out more . . .</a>
+          </div>
+          <div class="col s6">
+            <a class="waves-effect waves-light btn-large orange" href="signup.html"><i class="material-icons right">keyboard_arrow_right</i>Try it now</a>
+          </div>
         </div>
       </div>
     </div>

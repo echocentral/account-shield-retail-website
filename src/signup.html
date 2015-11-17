@@ -84,7 +84,7 @@
             </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;"><input type="text" name="b_55cd08c671ad908ae607de86b_6a81b11083" tabindex="-1" value=""></div>
             <div class="row right-align">
-              <button id="mc-embedded-subscribe" class="btn waves-effect waves-light orange" type="submit" value="Subscribe" name="subscribe">Register</button>
+              <button id="mc-embedded-subscribe" class="btn waves-effect waves-light orange" type="submit" value="Subscribe" name="subscribe" onclick="goog_report_conversion()">Register</button>
             </div>
           </div>
         </form>
@@ -92,94 +92,6 @@
       <!--End mc_embed_signup-->
     </div>
   </div>
-
-  <!--div id="section2" class="section container center">
-    <div class="row">
-      <div class="col s12">
-        <h4>Register interest</h4>
-      </div>
-    </div>
-    <div class="row">
-      <form class="container z-depth-2 active-light-blue left-align">
-        <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">account_circle</i>
-            <input id="first_name" type="text" class="validate">
-            <label for="first_name">First Name</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Last Name</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <i class="material-icons prefix">https</i>
-            <input id="password1" type="password" class="validate">
-            <label for="password1">Choose password</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="password2" type="password" class="validate">
-            <label for="password2">Repeat password</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">email</i>
-            <input id="email" type="email" class="validate">
-            <label for="email">Email address</label>
-          </div>
-          <div class="input-field col s12">
-            <input type="checkbox" class="filled-in" id="filled-in-box" />
-            <label for="filled-in-box">I have read and agree to be bound by the <a href="#">terms and conditions</a></label>
-          </div>
-        </div>
-        <div class="row right-align">
-          <button class="btn waves-effect waves-light orange" type="submit" name="action">Submit</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div id="section3" class="section container">
-    <div class="row">
-      <div class="col s12 center-align">
-        <h4>2 - Validate your email address</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col s12 m8">
-        <p>Create your account above, and you should receive an email containing a verification link.  Click on the link to complete the sign up process.</p>
-        <p>If you have not received an email within 1 hour, please check your spam or junk folder - if you still cannot find it, then please email us at <a href="mailto:signup.help@echo-central.com">signup.help@echo-central.com</a>.</p>
-      </div>
-      <div class="col s0 m4 right-align">
-        <i class="material-icons massive light-blue-text text-lighten-2">email</i>
-      </div>
-    </div>
-  </div>
-
-  <div id="section4" class="section container">
-    <div class="row">
-      <div class="col s12 center-align">
-        <h4>3 - Login to the Dashboard</h4>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col m4">
-        <div class="browser-window">
-          <img src="dash.jpg" alt="">
-        </div>
-      </div>
-      <div class="col m8">
-        <p>Once your email has been verified, you can login to your Dashboard.</p>
-        <p>Follow the instructions there to register your website domain(s) to work with <em>Account Shield</em>.</p>
-        <p>Then head over to the <a href="documentation.html">Documentation</a> page for examples of how to use <em>Account Shield</em>'s powerful features.</p>
-        <div class="center-align">
-          <button class="btn orange">Login</button>
-        </div>
-      </div>
-    </div>
-  </div-->
 
   {% include "_footer.html" %}
 
@@ -193,24 +105,37 @@
     })(jQuery); // end of jQuery name space
   </script>
 
-  <!-- Google Code for AS Registration Conversion Page -->
+  <!-- Google Code for Conversion Action -->
   <script type="text/javascript">
-  /* <![CDATA[ */
-  var google_conversion_id = 960333244;
-  var google_conversion_language = "en";
-  var google_conversion_format = "3";
-  var google_conversion_color = "ffffff";
-  var google_conversion_label = "m3-SCOfFtmEQvIv2yQM";
-  var google_remarketing_only = false;
+    /* <![CDATA[ */
+    goog_snippet_vars = function() {
+      var w = window;
+      w.google_conversion_id = 960333244;
+      w.google_conversion_label = "28xqCPbSumEQvIv2yQM";
+      w.google_remarketing_only = false;
+    }
+    // DO NOT CHANGE THE CODE BELOW.
+    goog_report_conversion = function(url) {
+      goog_snippet_vars();
+      window.google_conversion_format = "3";
+      window.google_is_call = true;
+      var opt = new Object();
+      opt.onload_callback = function() {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    }
+    var conv_handler = window['google_trackConversion'];
+    if (typeof(conv_handler) == 'function') {
+      conv_handler(opt);
+    }
+  }
   /* ]]> */
   </script>
-  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  <script type="text/javascript"
+    src="//www.googleadservices.com/pagead/conversion_async.js">
   </script>
-  <noscript>
-  <div style="display:inline;">
-  <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/960333244/?label=m3-SCOfFtmEQvIv2yQM&amp;guid=ON&amp;script=0"/>
-  </div>
-  </noscript>
+
 
   </body>
 </html>
