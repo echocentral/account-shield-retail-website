@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Account Shield - Stop account takeover and identity theft</title>
+  {% include "_head.html" %}
+  <meta name="description" content="ACCOUNT SHIELD - Protect your online customers from account takeover and identity theft">
+
+  <style>
+    /* Basic tag overrides */
+    body {font-weight: 300; font-size: 16px;}
+    a {color: #ff9800;}
+    h1 {font-weight: 200; color: #000;}
+    h2 {text-transform: uppercase; font-size: 2.5rem; font-weight: 300;}
+    h2 i {vertical-align: middle !important;}
+    em {font-size: 80%; font-style: normal; text-transform: uppercase; color: #03a9f4;}
+
+    /* Top menu */
+    .trigger1 nav li:last-child {background-color: #ffa726;}
+
+    /* Side menu */
+    #sideMenu {position: fixed; top: 50%; transform: translateY(-50%); right: 20px; z-index: 99999;}
+    #sideMenu li a {width: 12px; height: 12px; border-radius: 50%; border: 2px solid #81d4fa; background: #FFF; display: block; margin: 10px 0; -webkit-transition: all 300ms ease; -moz-transition: all 300ms ease; -ms-transition: all 300ms ease; -o-transition: all 300ms ease; transition: all 300ms ease;}
+
+    /* Right scroll menu */
+    .table-of-contents li {padding: inherit;}
+    .table-of-contents a {display: initial; font-weight: inherit; color: inherit; padding-left: inherit; height: auto; line-height: normal; letter-spacing: normal;}
+    .table-of-contents a:hover {color: inherit; padding-left: inherit; border-left: none;}
+    .table-of-contents a.active {font-weight:inherit; padding-left: inherit; border-left: none; background-color: #ff9800 !important; border-color: #ff9800 !important;}
+
+    /* Helper classes */
+    #section1 {margin-top: 8%;}
+    .btn-large i.large {font-size: 3rem; line-height: 1.33;}
+
+    /* Section 1*/
+    z#section1 .heading {background: url('phishing2.png') no-repeat right;}
+
+  </style>
+</head>
+<body>
+  {% include "_navbar.html" with {option: 1} %}
+
+  <div id="section1" class="section">
+    <div class="container">
+      <div class="row heading">
+        <div class="col s7 m9">
+          <h1>How to stop account takeover?</h1>
+          <h5><em>Account Shield - the simple and effective way to protect your customer accounts</em></h5>
+          <br>
+          <br>
+          <h5>The problem</h5>
+          <p>Barely a week passes without some story in the media of a company's systems being hacked by cyber-criminals and their customer details being stolen. Hacking is big business, and only a small proportion of such security breaches make the news.</p>
+          <p>Criminals are after customer records - ideally bank card information and login credentials. They will exploit this information themselves, sell it on to others, or often, both. If you know where to look on the Internet, you can already find email and password combinations for hundreds of millions of people. <a href="https://haveibeenpwned.com/" target="haveibeenpwned">Maybe yours too!</a></p>
+          <p>Even if you haven't been hacked, this is still a problem which impacts your business. Why? Because many, many, people use the same email address and password combination for <b>ALL</b> their online accounts.</p>
+          <p>If you have customers with online accounts, it is almost certain that some of those accounts will be accessible to fraudsters using hacked login credentials. Would you know if it happens? Most businesses only find out when an angry customer contacts them about irregularities on their account.</p>
+        </div>
+        <div class="col s5 m3">
+          <img class="responsive-img" src="person-bad.png" alt="anonymous hacker">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="section2" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5>How do you protect your customers?</h5>
+          <p>There's no shortage of security measures that have been adopted to guard logins - fingerprint readers, card readers, additional pass phrases, and more. But all have the unfortunate side-effect of making life harder for bonafide customers and/or not working well with websites.</p>
+          <p><em>Account Shield</em> uses multi-factor authentication (that is, it checks many different factors to establish that people are who they say they are), but does so in a way that is transparent to your customers, and works across all the different devices that connect to the web.</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <div id="section3" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h5>However, no measures are completely effective<br>you must assume that some account credentials will always be compromised</h5>
+          <p>It is important to put in place protection in the event that scammers do obtain the credentials of your customers.</p>
+          <p><em>Account Shield</em> protects your customers by silently adding an additional layer of device recognition to your website. Now, even with the correct login details, fraudsters won't get in - <em>Account Shiekd</em> will block access <b>and</b> alert you and the account holder.</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <div class="col s12 center">
+          <br>
+          <div class="col s6">
+            <a class="waves-effect waves-light btn-large white black-text" href="index.html"><i class="material-icons right small">keyboard_arrow_down</i>Find out more . . .</a>
+          </div>
+          <div class="col s6">
+            <a class="waves-effect waves-light btn-large orange" href="signup.html"><i class="material-icons right">keyboard_arrow_right</i>Try it now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "_footer.html" %}
+
+  <!--  Scripts-->
+  {% include "_tail.html" %}
+  <script>
+    (function($){
+      $(function(){
+        $('.button-collapse').sideNav();
+        $('.scrollspy').scrollSpy();
+      });
+    })(jQuery);
+  </script>
+</body>
+</html>
